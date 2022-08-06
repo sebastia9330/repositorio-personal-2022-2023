@@ -1,7 +1,7 @@
 public class Persona {
     private String nombre = " Sebastian";
-    private String apellido = "Carrero";
-    private int edad = 22;
+    public String apellido = "Carrero";
+    public int edad = 22;
     public int telefono;
     public int estrato = 5;
     
@@ -13,7 +13,7 @@ public class Persona {
         System.out.println("hola soy menos de edad");
        }*/
         
-    }
+    }/* 
     public void despedir(){
         System.out.println("adios");  
     }
@@ -31,6 +31,6 @@ public class Persona {
     }
     public void setApellido(String apellido2){
       this.apellido=apellido2;
-    }
+    }*/
   }
 
