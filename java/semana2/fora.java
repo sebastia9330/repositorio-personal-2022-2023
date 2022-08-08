@@ -51,5 +51,6 @@ class fora {
     for(int i= 0; i< tam; i++) {
       System.out.println(temperatura4[i] + " ");
     } */
+    //fin del codigo
   }
 }
