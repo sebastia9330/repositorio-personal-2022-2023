@@ -13,13 +13,13 @@ public class Persona {
         System.out.println("hola soy menos de edad");
        }*/
         
-    }/* 
+    }
     public void despedir(){
         System.out.println("adios");  
     }
     public String getNombre(){
       return this.nombre;
-    }
+    }/*
     public String getApellido(){
       return this.apellido;
     }
