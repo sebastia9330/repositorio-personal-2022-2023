@@ -10,6 +10,9 @@ public class appPrueba {
       System.out.println("---------Empleado--------");
       Empleado unEmpleado = new Empleado();
       unEmpleado.mostrarTiempolaborado();
+      System.out.println("---------Trabajador Independiete--------");
+      TrabajadorIndependiente untrabajador = new TrabajadorIndependiente();
+      untrabajador.mostrarTipoNegocio();
     }
   }
   class Persona{
@@ -40,6 +43,17 @@ public class appPrueba {
           public void mostrarTiempolaborado(){
               this.saludar();
               System.out.println("El tiempo que llevo en esta empresa son "+this.tiempoLaborado + " años");
+      
+        }
+    }
+    class TrabajadorIndependiente extends Persona{
+        public String tipoNegocio = "Comercio";
+        public TrabajadorIndependiente(){//creando constructor de la clase empleado
+          super("Sara");
+        }
+          public void mostrarTipoNegocio(){
+              this.saludar();
+              System.out.println("mi tipo de negocio es "+this.tipoNegocio);
       
         }
     }
