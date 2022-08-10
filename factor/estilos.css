@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: ´Poppins´, sans-serif;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+}
+.container{
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: #e2082c;
+}
+.container .logo-details{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.container .logo-details img{
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+    min-width: 60px;
+    text-align: center;
+}
+.container .logo-details .logo_name{
+    background: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin-left: 8px;
+    padding: 13px;
+    margin: 0;
+}
+.container .nav-links{
+    margin-top: 16px;
+}
+.container .nav-links li{
+    height: 50px;
+    width: 100%;
+    list-style: none;
+}
+.container .nav-links li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+.container .nav-links li a:hover{
+    background: rgb(92, 0, 0);
+}
+.container .nav-links li a i{
+    /*background: black;*/
+    min-width: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+.container .nav-links li a .link_name{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+}

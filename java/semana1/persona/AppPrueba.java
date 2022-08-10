@@ -3,7 +3,7 @@ public class AppPrueba{
         Persona unaPersona = new Persona(); 
         unaPersona.saludar();
         unaPersona.despedir();
-        System.out.println("el valor almacenado en nombre es: " + unaPersona.getNombre());/* 
+        System.out.println("el valor almacenado en nombre es: " + unaPersona.getNombre());/*
         System.out.println("el valor almacenado en nombre es: " + unaPersona.getApellido());
         System.out.println("el valor almacenado en nombre es: " + unaPersona.getEdad());
         unaPersona.setNombre("Felipe");
