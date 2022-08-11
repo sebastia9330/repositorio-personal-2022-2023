@@ -1,0 +1,5 @@
+nombre = input("Digite su nombre: ")
+n = len(nombre)
+print(nombre.upper())
+print(n)
+print(nombre.upper() + " tiene " + str(len(nombre)) + " letras")
