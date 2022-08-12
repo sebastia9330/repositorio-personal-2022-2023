@@ -23,6 +23,12 @@ public class appPrueba {
         arregloPersonas[i].mostrarDeudas();
 
       }
+      System.out.println("-----------Poliformismo por sobrecarga----------");
+      unEstudiante.mostrarDeudas("prestamo estudiantil");
+      unEmpleado.mostrarDeudas(80000);
+      unEmpleado.mostrarDeudas("Prestamo Bancario");
+    
+      untrabajador.mostrarDeudas(75000);
     }
   }
   class Persona{
@@ -36,6 +42,13 @@ public class appPrueba {
     public void mostrarDeudas(){
       System.out.println("Deudas por Doquier");
     }
+    public void mostrarDeudas(int deuda){
+      System.out.println("La deuda que tengo es de " + deuda);
+    }
+    public void mostrarDeudas(String tipoDeuda){
+      System.out.println("El tipo de deuda es de :"+ tipoDeuda);
+    }
+
   }
   class Estudiante extends Persona{
     public String nombreUniversidad = "UTB";
