@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch proyecto4",
+            "request": "launch",
+            "mainClass": "java.semana4.proyecto4",
+            "projectName": "programacion_4329cb4e"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
