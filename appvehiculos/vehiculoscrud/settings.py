@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'vehiculoscrud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3opdfrl0bkdfk',
+        'USER' : 'mpbrlklzikkvgw',
+        'PASSWORD' : 'd069e301510660727aad4fbb52ddc08985d3f38672e231dc34f930681d696311',
+        'HOST' : 'ec2-3-214-2-141.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
