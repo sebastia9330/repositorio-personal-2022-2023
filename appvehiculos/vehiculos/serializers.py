@@ -8,7 +8,7 @@ class tipoVehiculoSerializer(serializer.ModelSerializer):
         fields = ('id', 'nombreTipo', 'created_at')
         read_only_fields = ('created_at', )
 
-class modeloVehiculo(serializer.ModelSerializer):
+class modeloVehiculoSerializer(serializer.ModelSerializer):
     class Meta:
         model = modeloVehiculo
         fields = ('id', 'nombreModelo', 'created_at')
