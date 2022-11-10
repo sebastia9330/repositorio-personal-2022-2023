@@ -1,9 +1,13 @@
 import React from 'react'
 
-function EliminarProducto(){
+function EliminarProductos (){
     return(
-    <h2>Eliminar productos</h2>
+        <div>
+            <h2>Eliminar productos</h2>
+        </div>
+        
     )
+
 }
 
-export default EliminarProducto
+export default  EliminarProductos
