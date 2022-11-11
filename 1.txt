@@ -1,0 +1,4 @@
+  <EditarProductos/>
+        <AgregarProductos/>
+        <VerProducto/>
+        <EliminarProductos/>
