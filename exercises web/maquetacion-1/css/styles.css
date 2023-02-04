@@ -97,3 +97,28 @@ header h1 a:hover{
     background-color: #70b231;
     box-shadow: 0px 0px 4px green inset;
 }
+
+/*menu desplegable*/
+#nav > ul > li > ul{
+    display: none;
+    position: absolute;
+    width: 160px;
+    box-shadow: 0px 2px 2px gray;
+    z-index: 1;
+}
+#nav > ul > li:hover > ul{
+    display: block;
+}
+#nav > ul > li:hover > ul > li{
+    background-color: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6 ;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+}
+#nav > ul > li:hover > ul > li a{
+    color: #333
+}
+#nav > ul > li:hover > ul > li:hover{
+    box-shadow: 0px 0px 6px #3b3b3b inset;
+}
