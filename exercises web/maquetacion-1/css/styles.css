@@ -17,6 +17,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "icons";
+    src: url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format('svg'),
+    url("fonts/websymbols-regular-webfont.eot"),
+    url("fonts/websymbols-regular-webfont.eot?#iefix") format("embedded-opentype"),
+        url("fonts/websymbols-regular-webfont.woff") format("woff"),
+        url("fonts/websymbols-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 /*estilos generales*/
 *{
     padding: 0;
@@ -47,6 +58,22 @@ a:hover{
 
 .blue{
     color: #0c73f2 !important;
+}
+
+.orange{
+    color: #d69d2a !important;
+}
+
+.icon{
+    font-family: "icons";
+    float: left;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
 }
 
 /*FORMULARIOS*/
@@ -226,7 +253,6 @@ header h1 a:hover{
 }
 
 #frase{
-    clear: both;
     width: 180px;
     padding: 10px;
     font-size: 14px;
@@ -309,6 +335,7 @@ header h1 a:hover{
     font-weight: normal;
     letter-spacing: 1px;
     text-align: center;
+    margin-top: -20px;
     padding-top: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
@@ -337,5 +364,36 @@ header h1 a:hover{
     font-size: 14px;
 }
 
+#sections .stickerOne,
+#sections .stickerTwo{
+    position: absolute;
+    margin-top: -38px;
+    z-index: 0;
+    border: 1px solid rgb(133, 133, 133);
+}
 
+#sections .stickerTwo{
+    margin-left: 860px;
+}
 
+#history{
+    float: right;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+}
+/*footer*/
+#footer{
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 40px;
+    background-color: #333;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0px 0px 2px gray;
+    
+}
