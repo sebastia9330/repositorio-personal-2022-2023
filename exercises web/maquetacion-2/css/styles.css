@@ -553,7 +553,7 @@ body{
 }
 
 #articles article{
-    width: 100%;
+    width: 98%;
     height: auto;
     border: 1px solid #ccc;
     margin: 40px auto;
@@ -607,7 +607,10 @@ body{
     margin-top: 60px;
     line-height: 100px;
     text-align: center;
+    transition: all 1s;
 }
+
+
 
 #blog a{
     display: block;
@@ -616,8 +619,57 @@ body{
     letter-spacing: 3px;
     color: #00538c;
     text-decoration: none;
+    transition: all 1s;
 }
 
+#blog:hover{
+    border: 10px solid #37bcf9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    background-color: #333;
+    animation: blink 15s infinite linear;
+}
+
+@keyframes blink{
+    0%{
+        border: 10px solid #37bcf9;
+    }
+    10%{
+        border: 10px solid #1cedae;
+    }
+    20%{
+        border: 10px solid #ff0571;
+    }
+    30%{
+        border: 10px solid #c2ff05;
+    }
+    40%{
+        border: 10px solid #1eff05;
+    }
+    50%{
+        border: 10px solid #ff0534;
+    }
+    60%{
+        border: 10px solid #007e49;
+    }
+    70%{
+        border: 10px solid #80001a;
+    }
+    80%{
+        border: 10px solid #4b9100;
+    }
+    90%{
+        border: 10px solid #008d00;
+    }
+    100%{
+        border: 10px solid #7e0000;
+    }
+}
+
+#blog:hover a{
+    text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 6px 1px black;
+    color: #fff;
+}
 /*Footer*/
 #footer{
     width: 100%;
@@ -672,6 +724,14 @@ body{
 #footer ul li a{
     display: block;
     height: 40px;
+    transition: all 300ms;
+    text-transform: uppercase;
+}
+
+#footer ul li:hover a{
+    padding-left: 40px;
+    color: #fff;
+    width: 100%;
 }
 
 #footer iframe{
@@ -685,6 +745,44 @@ body{
 
 #footer img{
     margin-bottom: 15px;
+    border: 1px solid #7e0000;
+    animation: bo 15s infinite linear;
+}
+
+@keyframes bo{
+    0%{
+        border: 1px solid #37bcf9;
+    }
+    10%{
+        border: 1px solid #1cedae;
+    }
+    20%{
+        border: 1px solid #ff0571;
+    }
+    30%{
+        border: 1px solid #c2ff05;
+    }
+    40%{
+        border: 1px solid #1eff05;
+    }
+    50%{
+        border: 1px solid #ff0534;
+    }
+    60%{
+        border: 1px solid #007e49;
+    }
+    70%{
+        border: 1px solid #80001a;
+    }
+    80%{
+        border: 1px solid #4b9100;
+    }
+    90%{
+        border: 1px solid #008d00;
+    }
+    100%{
+        border: 1px solid #7e0000;
+    }
 }
 
 #footer #browsers img{
