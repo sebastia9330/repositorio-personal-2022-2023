@@ -1,5 +1,5 @@
 $fuente-tipica: sans-serif, Helvetica, Arial; //variable de fuente
-$color-fondo: #ccc; //color fondo
+$color-fondo: black; //color fondo
 $color-letra: red;
 
 body{
@@ -82,4 +82,23 @@ h1{
 //Operadores
 h1{
     font-size: 20px + 5px;
+}
+
+//condicionales-if
+h1{
+    @if $color-fondo == #ccc{
+        color: black;
+    }@else{
+        color: lightcoral;
+    }
+}
+//for
+
+$contador: 1;
+
+@for $contador from 1 through 8{
+    .listado ul li:nth-child(#{$contador}){
+        color: orange;
+        font-size: $contador * 10px;
+    }
 }
