@@ -10,3 +10,51 @@
 h1{
     font-family: @fuente;
 }
+
+//anidacion
+.informacion{
+    ul{
+        li{
+            a{
+                color: #fff;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+//mixins
+.sombras(){
+    box-shadow: 0px 0px 10px black;
+    text-shadow: 0px 0px 5px black;
+}
+
+.informacion{
+    .sombras()
+}
+
+//operadores
+h1{
+    font-size: 30px + 7px;
+}
+
+//mixins condicionales
+.textoBlanco (@value) when (@value=true){
+    color: #fff;
+}
+
+h1{
+    color: blue;
+    .textoBlanco(true);
+}
+
+//bucle
+.loop(@cont) when (@cont > 0){
+    .loop(@cont -1);
+    height: (900px/ @cont);
+}
+
+.informacion{
+    height: 900px;
+    .loop(5);
+}
