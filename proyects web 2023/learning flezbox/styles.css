@@ -5,7 +5,17 @@ body{
     color: #fff;
 }
 
-#layaut{
+#layout{
+    /*display: inline-flex; ocupa el ancho de la caja acorde al contenido*/
+    display: flex; /*ocupa el ancho total del contenedor*/
+    flex-direction: row; /*organiza en fila uno al lado del otro*/
+    /*flex-direction: column; comporta los elementos como columnas*/
+    /*flex-direction: row-reverse; organiza los elementos en fila pero cambia el orden de ellos*/
+    /*flex-direction: column-reverse; orgaiza los elementos en columnas pero el ultimo lo pocesiona de primero*/
+    /*flex-wrap: nowrap; indica que las cajas se salgan del contenedor y genera scroll*/
+    /*flex-wrap: wrap; /*indica que todos los elemantos queden dentro de la caja dando un salto de linea*/
+    flex-flow: row wrap;/*me deja poner las dos funciones, la direccion y el wrap*/
+
     border: 3px solid black;
     padding: 5px;
 }
@@ -29,6 +39,7 @@ body{
 }
 
 .blue{
+    order: 1;
     background: blue;
 }
 
