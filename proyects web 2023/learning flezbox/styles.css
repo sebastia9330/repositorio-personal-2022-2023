@@ -15,12 +15,15 @@ body{
     /*flex-wrap: nowrap; indica que las cajas se salgan del contenedor y genera scroll*/
     /*flex-wrap: wrap; /*indica que todos los elemantos queden dentro de la caja dando un salto de linea*/
     flex-flow: row wrap;/*me deja poner las dos funciones, la direccion y el wrap*/
-
+    justify-content: space-between; /*me posiciona los objetos en el eje x*/
+    height: 500px;
+    align-items: flex-start; /*me permita alinear las cajas en el eje Y*/
     border: 3px solid black;
     padding: 5px;
 }
 
 .caja{
+    /*flex-grow: 1;/*esta propiedad nos permite que los elementos se ajusten al ancho de la caja padre*/
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -31,19 +34,22 @@ body{
 }
 
 .red{
+    align-self: flex-end;
+    order: 4;
     background: red;
 }
 
 .green{
-    order: 2;
     background: green;
 }
 
 .blue{
-    order: 1; /*organiza las cajas donde le indiquemos*/
+    order: 1;
     background: blue;
 }
 
 .orange{
+    align-self: flex-start;
+    order: 1;
     background: orangered;
 }
