@@ -35,11 +35,12 @@ body{
 }
 
 .green{
+    order: 2;
     background: green;
 }
 
 .blue{
-    order: 1;
+    order: 1; /*organiza las cajas donde le indiquemos*/
     background: blue;
 }
 
