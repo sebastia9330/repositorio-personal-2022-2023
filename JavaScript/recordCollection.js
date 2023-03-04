@@ -1,29 +1,36 @@
+// Setup
 const recordCollection = {
-    2548: {
-      albumTitle: 'Slippery When Wet',
-      artist: 'Bon Jovi',
-      tracks: ['Let It Rock', 'You Give Love a Bad Name']
-    },
-    2468: {
-      albumTitle: '1999',
-      artist: 'Prince',
-      tracks: ['1999', 'Little Red Corvette']
-    },
-    1245: {
-      artist: 'Robert Palmer',
-      tracks: []
-    },
-    5439: {
-      albumTitle: 'ABBA Gold'
-    }
-  };
-  
-  // Only change code below this line
-  function updateRecords(records, id, prop, value) {
-    //console.log(records);
-    console.log(records[id]);
-    prop = records[id]
-    console.log(prop);
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
   }
-  
-  updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if(prop !== 'tracks' && value !== ""){
+    records[id][prop] = value  //actualizar un valor
+  }else if(prop === 'tracks' && records[id].hasOwnProperty('tracks') === false){
+    records[id][prop] = [value]  //crear una matriz y asignar un valor. comprobar si la propiedad esta
+  }else if(prop === 'tracks' && value !== ""){
+    records[id][prop].push(value) //agregar un valor a un arreglo
+  }else if(value === ""){
+    delete records[id][prop] //eliminar una propiedad
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
