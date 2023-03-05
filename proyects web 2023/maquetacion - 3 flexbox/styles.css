@@ -22,7 +22,7 @@
 
 #header{
     display: flex;
-    flex-direction: row;
+    
     flex-wrap: wrap;
     align-items: center;
     height: 120px;
@@ -34,6 +34,9 @@
     flex-basis: 60%;
     margin-left: 10px;
     text-shadow: 1px 1px opx #ccc;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
 }
 
 .logo h1{
@@ -44,12 +47,12 @@
 
 #menu{
     flex-grow: 1;
-    flex-basis: 30%;
+    flex-basis: 35%;
     height: 100%;
     padding-right: 20px;
 }
 
-#menu ul{
+#menu > ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -67,4 +70,176 @@
 
 #menu a:hover{
     background: #003147;
+}
+
+/*content*/
+#content{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#projects{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-basis: 80%;
+}
+
+.project{
+    flex-grow: 1;
+    flex-basis: 250px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px gray;
+}
+
+.project img{
+    width: 100%;
+}
+
+.project-info{
+    padding: 10px;
+}
+
+.project-info a{
+    font-size: 16px;
+    color: black;
+    transition: all 300ms;
+}
+
+.project-info a:hover{
+    color: green;
+}
+
+.project-info p{
+    font-size: 16px;
+    color: gray;
+}
+
+#aside{
+    height: 1200px;
+    flex-basis: 15%;
+    margin-right: 30px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#aside h2{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid gray;
+}
+
+#aside ul{
+    list-style: none;
+}
+
+#aside ul li{
+    padding-bottom: 20px;
+}
+
+#aside a{
+    text-align: center;
+    display: block;
+    padding: 20px;
+    background: linear-gradient(gray, #fff);
+    transition: all 300ms;
+}
+
+#aside a:hover{  
+    background: linear-gradient(#fff, gray);
+    color: black;
+}
+
+#footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    height: 120px;
+    align-items: center;
+    border-top: 1px solid gray;
+}
+
+#footer .logo{
+    opacity: 0.5;
+    flex-basis: auto;
+    flex-grow: 1;
+    order: 2;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#footer .info{
+    flex-grow: 1;
+    order: 1;
+    margin-left: 20px;
+}
+
+@media (max-width: 1334px){
+   #header{
+    text-align: center;
+   }
+   
+    #menu > ul{
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+   }
+}
+
+@media (max-width: 646px){
+
+    #content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    #aside{
+        margin-right: 0px;
+    }
+
+    #aside ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    #aside ul li{
+        flex-grow: 1;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .project{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    #footer .logo{
+        flex-wrap: 1;
+        order: 1;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0px;
+    }
+    #footer .info{
+        flex-wrap: 1;
+        order: 2;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0px;
+    }
 }
