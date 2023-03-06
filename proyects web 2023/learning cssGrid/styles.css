@@ -1,0 +1,58 @@
+body{
+    background: #084d6e;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.layout{
+    width: 80%;
+    margin: 0 auto;
+    height: 500px;
+    display: grid; /*se pone el display grid para que tenga las caractristicas de grid y se pone al contenedor*/
+   grid-gap: 10px; /*me genera un espaciado entre las cajas*/
+   /*grid-template-columns: repeat(4, calc(25% - 10px)); /*me organiza las cajas al tamaño que yo quiere y con la funcion "repeat" puedo decir cuantas columnas y cuanto tamaño quiero*/
+   grid-template-columns: repeat(3, 1fr); /*ponemos franciones para dividir el numero de columnas que quiera*/
+   grid-template-rows: 1fr 2fr 3fr 4fr 5fr;
+   padding: 10px;
+    border: 1px solid orangered;
+}
+
+.layout .box{
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 20px;
+    border: 4px solid black;
+}
+
+.red{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: red;
+}
+
+.green{
+    grid-row: 2/6;/*esta propiedad nos permite expandir nuestros elementos tomando como primer vlor su linea de inicio y como segundo valor su linea final*/
+    background: green;
+}
+
+.blue{
+    grid-column: 2/4;
+    background: blue;
+}
+
+.pink{
+    grid-column: 2/3;
+    grid-row: 3/5;
+    background: palevioletred;
+}
+
+.brown{
+    grid-row: 3/5;
+    background: brown;
+}
+
+.gray{
+    grid-column: 2/4;/*le decimos al contemedor que espacio quiero que ocupe tomando desde que linea hasta cual linea quiero que vaya, esta propiedad es iglual que el grid column start y end pero se pone el inicio y el final separados por un slash*/
+    background: gray;
+}
