@@ -4,7 +4,79 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*ejercicio completo*/
+/*-----------------------------templates area---------------------------------------------*/
+#website-area *{
+    margin: 0px;
+    padding: 0px;
+}
+
+#website-area{
+    display: grid; /*primer paso, definir el display grid*/
+    grid-template-columns: repeat(5, 1fr); /*segundo y tercer paso, definir las columnas y las filas*/
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-template-areas: 
+        "cabecera cabecera cabecera cabecera cabecera"
+        "menu menu menu menu menu"
+        "contenido contenido contenido contenido lateral"
+        "footer footer footer footer footer"; 
+    grid-gap: 20px;/*me sirve para separar las filas y las columnas, tambien solo las filas o las columnas*/
+    width: 75%;
+    height: 100vh;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+#website-area #cabecera{
+    grid-area: cabecera;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*grid-column: 1/6; /*manera de expandir las filas*/
+    background-color: blue;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#website-area #menu{
+    grid-area: menu;
+    background: rgb(0, 191, 255);
+    color: black;
+}
+
+#website-area #menu ul{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    list-style: none;
+}
+
+#website-area #contenido{
+    grid-area: contenido;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding: 25px;
+    background: gray;
+}
+
+#website-area #contenido article{
+    background: #ccc;
+    border: 1px solid black;
+}
+
+#website-area #lateral{
+    grid-area: lateral;
+    background: orange;
+    color: #fff;
+}
+
+#website-area #footer{
+    grid-area: footer;
+    background-color: black;
+    color: #fff;
+}
+
+
+/*-----------------------------ejercicio completo---------------------------------------------*/
 #website *{
     margin: 0px;
     padding: 0px;
@@ -20,7 +92,7 @@ body{
     border: 1px solid black;
 }
 
-#cabecera{
+#website #cabecera{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,19 +102,19 @@ body{
     text-transform: uppercase;
 }
 
-#menu{
+#website #menu{
     grid-column: 1/6;
     background: rgb(0, 191, 255);
     color: black;
 }
 
-#menu ul{
+#website #menu ul{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     list-style: none;
 }
 
-#contenido{
+#website #contenido{
     grid-column: 1/5;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -51,18 +123,18 @@ body{
     background: gray;
 }
 
-#contenido article{
+#website #contenido article{
     background: #ccc;
     border: 1px solid black;
 }
 
-#lateral{
+#website #lateral{
     grid-column: 5/6;
     background: orange;
     color: #fff;
 }
 
-#footer{
+#website #footer{
     grid-column: 1/6;
     background-color: black;
     color: #fff;
