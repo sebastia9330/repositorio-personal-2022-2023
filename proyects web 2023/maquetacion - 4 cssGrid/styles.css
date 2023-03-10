@@ -157,6 +157,10 @@
 }
 
 #footer{
+    display: grid;
+    grid-template-columns: 1fr 25%;
+    align-items: center;
+    justify-content: start;
     height: 120px;
     align-items: center;
     border-top: 1px solid gray;
@@ -164,17 +168,72 @@
 
 #footer .logo{
     opacity: 0.5;
-    flex-basis: auto;
-    flex-grow: 1;
-    order: 2;
     text-transform: uppercase;
-    text-align: right;
+    text-align: left;
     margin-right: 20px;
 }
 
 #footer .info{
-    flex-grow: 1;
-    order: 1;
     margin-left: 20px;
 }
 
+
+@media (max-width: 784px){
+    #header{
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-content: center;
+        height: 140px;
+        padding-bottom: 20px;
+    }
+
+    #header h1{
+        text-align: center;
+    }
+
+    #menu{
+        width: auto;
+    }
+
+    #content{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start; 
+        grid-column-gap: auto;
+    }
+
+    #projects{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+
+    .project{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #aside{
+        margin: 0px;
+    }
+
+    #aside ul{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    #footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+
+    #footer .logo{
+        text-align: center;
+    }
+    
+    
+}
