@@ -11,3 +11,17 @@
     list-style: none;
     line-height: 50px;
 }
+
+.item{
+    height: 150px;
+}
+
+#black{
+    background: #000;
+}
+
+footer{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
