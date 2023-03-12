@@ -20,8 +20,25 @@
     background: #000;
 }
 
+.lateral{
+    height: 250px;
+}
+
+.lateral > div{
+    height: calc(250px / 3);
+}
+
+.lateral2{
+    height: 250px;
+}
+
+.lateral2 > div{
+    height: calc(250px / 3);
+}
+
 footer{
     height: 50px;
     line-height: 50px;
     text-align: center;
 }
+
