@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container1{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://www.malagahoy.es/2022/09/26/vivir/Amanecer-inmediaciones-Nerja-Malaga_1723938475_166861934_1200x675.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: table;
+}
+
+.container2{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: table;
+}
+
+.container3{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://www.eltiempo.com/uploads/2018/11/22/5bf7569088b4a.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: table;
+}
+
+h1{
+    font-size: 6rem;
+    color: #000;
+    font-weight: 600;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.white{
+    color: #fff;
+}
