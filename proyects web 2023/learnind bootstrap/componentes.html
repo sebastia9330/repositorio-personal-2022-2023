@@ -90,6 +90,15 @@
                   <img class="d-block w-100" src="http://via.placeholder.com/900x350?text=TERCERA">
                 </div>
               </div>
+              <a class="carousel-control-prev" href="#slider" role="button" data-slider="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="sr-only">Anterior</span>
+              </a>
+
+              <a class="carousel-control-next" href="#slider" role="button" data-slider="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="sr-only">Siguiente</span>
+              </a>
             </div>
             <!--FIN DEL SLIDER-->
 
@@ -138,9 +147,9 @@
     <script>
       $(document).ready(function(){
         $(".carousel").carousel({
-          interval: 1000
-        })
-      })
+          interval: 3000
+        });
+      });
     </script>
 </body>
 </html>
