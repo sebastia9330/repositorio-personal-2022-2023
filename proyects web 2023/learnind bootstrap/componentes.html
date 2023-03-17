@@ -76,7 +76,6 @@
             </nav>
 
             <!--SLIDER-->
-           
 
             <div id="slider" class="carousel slide mb-3" data-ride="carousel">
               <div class="carousel-inner">
@@ -94,7 +93,6 @@
                 <span class="carousel-control-prev-icon"></span>
                 <span class="sr-only">Anterior</span>
               </a>
-
               <a class="carousel-control-next" href="#slider" role="button" data-slider="next">
                 <span class="carousel-control-next-icon"></span>
                 <span class="sr-only">Siguiente</span>
@@ -137,6 +135,25 @@
               <a href="#" class="btn btn-danger">entrar</a>
             </div>
           </div>
+          <!--barra de progreso-->
+          <div class="progress mt-5">
+            <div id="barra-progreso" class="progres-bar bg-success  w-0" role="progressbar">
+              50%
+            </div>
+          </div>
+
+          <script>
+            var contador = 0;
+            setInterval(function(){
+              if(contador < 100){
+                contador++;
+                var barra = document.querySelector("#barra-progreso");
+                barra.style.width = contador + '%';
+                barra.innerHTML = contador + '%';
+              }
+              
+            }, 1000);
+          </script>
         </div>
     </div>
 
