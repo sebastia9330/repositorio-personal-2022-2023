@@ -40,6 +40,10 @@ imprimir();
 var nombres = ["Sebastian", "Dilza", "Samuel"];
 
 document.write("<h3>listado de nombres</h3>");
-for(let i = 0; i < nombres.length; i++){
-    document.write(nombres[i] + "<br/>")
-}
+/*for(let i = 0; i < nombres.length; i++){
+    document.write(nombres[i] + "<br/>");
+}*/
+
+nombres.forEach((nombre) => {
+    document.write(nombre + "<br/>");
+});
