@@ -7,5 +7,5 @@ console.log(continente)
 var pais_continente = pais + " " +continente
 console.log(pais_continente)
 
-pais = "italia"
-contiente = "europa"
+
+
