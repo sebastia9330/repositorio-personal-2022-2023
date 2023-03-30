@@ -1,3 +1,4 @@
 /*alert("Hola Mundo")
 alert("Hola sebastian");*/
-console.log("muestra esto en la consola")
+let n1 = parseInt(prompt("Número 1"));
+console.log(n1)
