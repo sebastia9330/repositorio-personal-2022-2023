@@ -30,7 +30,7 @@ body::after{
 
 .popup{
     position: fixed;
-    top: -150%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0;
@@ -43,5 +43,61 @@ body::after{
     padding: 20px 30px;
     border-radius: 10px;
     z-index: 1000;
-    transition: top 0ms ;
+    transition: top 0ms ease-in-out 300ms,
+                opacity 300ms ease-in-out 0ms,
+                transform 300ms ease-in-out 0ms;
+}
+
+.popup.active{
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: top 0ms ease-in-out 0ms,
+                opacity 300ms ease-in-out 0ms,
+                transform 300ms ease-in-out 0ms;
+}
+
+.popup .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 25px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup h1{
+    font-size: 35px;
+    text-align: center;
+    margin: 10px 0px 20px;
+    color: #fff;
+}
+
+.popup p{
+    color: #fdfdfd;
+    font-size: 18px;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button#open-popup{
+    background: transparent;
+    outline: none;
+    border: 2px solid #fdfdfd;
+    font-size: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
 }
