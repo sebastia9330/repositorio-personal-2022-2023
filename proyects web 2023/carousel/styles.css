@@ -1,99 +1,48 @@
-/*.swiper{
-    width: 50vw;
-}
-
-.swiper-slide{
-    background: #000;
-}
-
-.swiper-slide img{
-    display: block;
+.carrusel{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 120em;
+    background: lightblue;
+    overflow: hidden;
+    
 }
 
-.swiper button{
-    width: 50px;
-    height: 50px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    outline: none;
-    transition: opacity 0.25s;
+.carrusel .grande{
+    width: 400%;
+    background: orange;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all .5s ease;
+    transform: translateX(0%);
 }
 
-.swiper button:hover{
-    opacity: 0.8;
+.carrusel img{
+    width: calc(100% / 4);
+    height: 400px;
+    min-height: 10vh;
+    margin: 10px;
+    background-color: lawngreen;
+    
 }
 
-.swiper button::before,
-.swiper button::after{
-    font-size: 24px;
-}
-
-.swiper-button-prev{
-    left: 25px;
-}
-
-.swiper-button-next{
-    right: 25px;
-}
-
-.swiper-pagination-bullet{
-    background-color: #fff;
-}*/
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html,
-body {
-    height: 100%;
-}
-body {
-    display: grid;
-    place-items: center;
-    background-color: #eee;
-}
-/* Demo styles end */
-.swiper {
-    width: 750px;
-}
-.swiper-slide {
-    background-color: #000;
-}
-.swiper-slide img {
-    display: block;
+.carrusel .puntos{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background-color: brown;
+    padding: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
-.swiper button {
-    width: 50px;
-    height: 50px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    outline: none;
-    transition: opacity 0.25s;
+
+.carrusel .punto{
+    width: 2em;
+    height: 2em;
+    margin: 5px;
+    background-color: blue;
 }
-.swiper button:hover {
-    opacity: 0.8;
-}
-.swiper button::before,
-.swiper button::after {
-    font-size: 24px;
-}
-.swiper-button-prev {
-    left: 25px;
-}
-.swiper-button-next {
-    right: 25px;
-}
-.swiper-pagination-bullet {
-    background-color: #fff;
+
+.carrusel .punto.active{
+    background: green;
 }
