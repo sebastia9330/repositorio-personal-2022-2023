@@ -171,18 +171,19 @@ body{
 }
 
 .green{
-    grid-row: 2/6;/*esta propiedad nos permite expandir nuestros elementos tomando como primer vlor su linea de inicio y como segundo valor su linea final*/
+    grid-column: 1/3;
+    grid-row: 3/5;/*esta propiedad nos permite expandir nuestros elementos tomando como primer vlor su linea de inicio y como segundo valor su linea final*/
     background: green;
 }
 
 .blue{
-    grid-column: 2/4;
+    grid-column: 1/4;
     background: blue;
 }
 
 .pink{
-    grid-column: 2/3;
-    grid-row: 3/5;
+    grid-column: 1/3;
+    grid-row: 4/5;
     background: palevioletred;
 }
 
@@ -192,6 +193,6 @@ body{
 }
 
 .gray{
-    grid-column: 2/4;/*le decimos al contemedor que espacio quiero que ocupe tomando desde que linea hasta cual linea quiero que vaya, esta propiedad es iglual que el grid column start y end pero se pone el inicio y el final separados por un slash*/
+    grid-column: 1/4;/*le decimos al contemedor que espacio quiero que ocupe tomando desde que linea hasta cual linea quiero que vaya, esta propiedad es iglual que el grid column start y end pero se pone el inicio y el final separados por un slash*/
     background: gray;
 }
