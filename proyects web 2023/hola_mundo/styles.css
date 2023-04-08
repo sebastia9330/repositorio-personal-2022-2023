@@ -3,10 +3,9 @@
 }
 
 h1{
-    width: 100%;
-    display: flex;
+    width: 10%;
+    display: inline-block;
     font-family: 'Courier New', Courier, monospace;
-    justify-content: center;
 }
 
 .container{
