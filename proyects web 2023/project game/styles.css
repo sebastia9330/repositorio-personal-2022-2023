@@ -136,14 +136,12 @@ body{
 .dos{
     display: grid;
     grid-template-columns: 40% 60%;
-    background-color: #000000;
     width: 80%;
     margin: 0 auto;
 }
 
 /* aside */
 .aside{
-    background: #500000;
     margin-right: 3%;
 }
 
@@ -165,6 +163,24 @@ body{
 .caja2{
     border: 2px solid #ff0000;
     margin: 10px;
+    padding: 10px;
+}
+
+.caja2 .parrafo{
+    color: white;
+    text-align: center;
+}
+
+.mejores ul{
+    list-style: none;
+}
+
+.mejores ul li{
+    border: 2px solid #000;
+    padding: 10px;
+    width: 70%;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /*section*/
