@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.contenedor{
+    background-image: url("img/fondo.jpg");
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/*imagen de cabecera*/
+.cabecera{
+    width: 100%;
+    height: 380px;
+}
+
+
+/*login de registo*/
+.login-box{
+    position: absolute;
+    top: 48%;
+    left: 23%;
+    width: 300px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(196, 111, 0, 0.781);
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+
+
+.login-box .user-box{
+    position: relative;
+}
+
+.login-box .user-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+
+.login-box .user-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label{
+    top: -20px;
+    left: 0;
+    color: #f40303;
+    font-size: 12px;
+}
+
+.forgot_pass{
+    font-size: 15px;
+    color: #500000;
+    float: right;
+}
+
+.forgot_pass:hover{
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.btn_submit{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #7c0000;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .1s;
+    margin-top: 20px;
+    margin-left: 40px;
+    letter-spacing: 4px;
+    border: 1px solid #500000;
+}
+
+.btn_submit:hover{
+    background: #000000;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    
+}
+
+/*barra de navegacion*/
+.nav{
+    padding: 20px;
+    display: flex;
+    
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+    margin-left: 35%;
+    padding: 0;
+}
+
+
+.nav ul li a{
+    text-decoration: none;
+    color: #f40303;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 3px solid #500000;
+}
+
+.nav ul li a:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dos{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color: #000000;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* aside */
+.aside{
+    background: #500000;
+    margin-right: 3%;
+}
+
+.aside .onetitle{
+    margin: 0;
+    text-align: center;
+    padding-top: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.aside .mapa{
+    width: 90%;
+    margin: 20px 5%;
+    border: 3px solid red;
+}
+
+.caja2{
+    border: 2px solid #ff0000;
+    margin: 10px;
+}
+
+/*section*/
+.section{
+    background-color: aqua;
+}
