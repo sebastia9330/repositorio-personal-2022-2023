@@ -1,0 +1,21 @@
+.container {
+  min-height: 100vh;
+  position: relative;
+}
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.container:hover::before {
+  background: transparent;
+}
+
+/*# sourceMappingURL=selectores.css.map */
