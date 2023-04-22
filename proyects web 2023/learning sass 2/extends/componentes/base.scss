@@ -1,0 +1,35 @@
+.container{
+    background: #9fc2c1;
+    min-height: 80vh;
+    padding: 80px;
+
+    
+}
+
+%boton{
+    padding: 20px;
+    border: none;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.btn{
+    @extend %boton;
+}
+
+.sold{
+    background: #1f4c97;
+    color: #fff;
+}
+
+.buy{
+    background: #146e23;
+    color: #ded2d2;
+}
+
+.link-btn{
+    display: inline-block;
+    text-decoration: none;
+    background: #106859;
+    color: #ccc;
+}

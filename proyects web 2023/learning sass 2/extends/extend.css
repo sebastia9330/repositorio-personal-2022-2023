@@ -1,0 +1,31 @@
+.container {
+  background: #9fc2c1;
+  min-height: 80vh;
+  padding: 80px;
+}
+
+.btn {
+  padding: 20px;
+  border: none;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.sold {
+  background: #1f4c97;
+  color: #fff;
+}
+
+.buy {
+  background: #146e23;
+  color: #ded2d2;
+}
+
+.link-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #106859;
+  color: #ccc;
+}
+
+/*# sourceMappingURL=extend.css.map */
