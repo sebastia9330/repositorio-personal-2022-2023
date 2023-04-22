@@ -1,0 +1,21 @@
+$fuente: quote(Arial);
+
+$tamañoletra: 30px;
+$duracion: 3s;
+$translacion: 50px;
+$relleno: 2em;
+
+$fondo: #8cacc1;
+
+//listas
+$borde: 5px dashed #195748;
+
+//maps
+$paletacolores: (
+    uno: #842b52,
+    dos: blue,
+    tres: rgba(0,0,0,.3)
+);
+
+@import 'seccion';
+

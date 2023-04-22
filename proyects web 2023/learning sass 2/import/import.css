@@ -1,0 +1,33 @@
+.parrafo {
+  font-family: "Arial";
+  font-size: 30px;
+  transition: all 3s ease;
+  -webkit-transition: all 3s ease;
+  -moz-transition: all 3s ease;
+  -ms-transition: all 3s ease;
+  -o-transition: all 3s ease;
+  padding: 2em;
+  background: #8cacc1;
+  border: 5px dashed #195748;
+}
+.parrafo:hover {
+  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  -o-transform: translateY(50px);
+}
+
+.uno {
+  color: #842b52;
+}
+
+.dos {
+  color: blue;
+}
+
+.tres {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/*# sourceMappingURL=import.css.map */
