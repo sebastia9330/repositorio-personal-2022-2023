@@ -31,6 +31,8 @@ window.addEventListener('load', () =>{
     // Click
     boton.addEventListener('click', function(){
         cambiarColor();
+        console.log(this)
+        this.style.border = "5px solid black"
     });
     
     //Mouse
