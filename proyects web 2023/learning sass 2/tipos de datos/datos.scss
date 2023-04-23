@@ -1,0 +1,53 @@
+$fuente: quote(Arial);
+
+$tamañoletra: 30px;
+$duracion: 3s;
+$translacion: 50px;
+$relleno: 2em;
+
+$fondo: #8cacc1;
+
+//listas
+$borde: 5px dashed #195748;
+
+//maps
+$paletacolores: (
+    uno: #842b52,
+    dos: blue,
+    tres: rgba(0,0,0,.3)
+);
+
+
+.parrafo{
+    font-family: $fuente;
+    font-size: $tamañoletra;
+    transition: all $duracion ease;
+    -webkit-transition: all $duracion ease;
+    -moz-transition: all $duracion ease;
+    -ms-transition: all $duracion ease;
+    -o-transition: all $duracion ease;
+    padding: $relleno;
+    background: $fondo;
+    border: $borde;
+
+
+    &:hover{
+        transform: translateY($translacion);
+        -webkit-transform: translateY($translacion);
+        -moz-transform: translateY($translacion);
+        -ms-transform: translateY($translacion);
+        -o-transform: translateY($translacion);
+}
+}
+
+.uno{
+    color: map-get($paletacolores,uno);
+}
+
+.dos{
+    color: map-get($paletacolores,dos);
+}
+
+.tres{
+    color: map-get($paletacolores,tres);
+}

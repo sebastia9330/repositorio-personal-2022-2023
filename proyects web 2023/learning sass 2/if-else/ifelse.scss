@@ -1,0 +1,19 @@
+$valor: yellow;
+
+@if $valor == green{
+    .container{
+        background: #c65876;
+        min-height: 80vh;
+    }
+}@else if $valor == yellow{
+    .container{
+        background: #005e05;
+        min-height: 60vh;
+    }
+}
+@else{
+    .container{
+        background: #ff0000;
+        min-height: 50vh;
+    }
+}    

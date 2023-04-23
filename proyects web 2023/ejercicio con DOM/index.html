@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio con en el DOM</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ejercicio DOM, Eventos y Funciones</h1>
+    <div class="box">
+        <form  method="POST" id="formulario" onsubmit="return false">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name="nombre" id="nombre"><br>
+            <label for="apellido">Apellido</label><br>
+            <input type="text" name="apellido" id="apellido"><br>
+            <label for="edad">Edad</label><br>
+            <input type="number" name="edad" id="edad"><br>
+
+            <input type="submit" value="Enviar" id="submit">
+        </form>
+    </div>
+
+    <div class="box dashed">
+        <h3>Informacion del Cliente</h3>
+        <hr>
+        <p id="p_nombre">Nombre: <span></span></p>
+        <p id="p_apellido">Apellido: <span></span></p>
+        <p id="p_edad">Edad: <span></span></p>
+    </div>
+</body>
+</html>

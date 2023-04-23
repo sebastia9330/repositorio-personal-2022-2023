@@ -1,0 +1,21 @@
+$fondo: #009708;
+$altura: 50vh;
+$tres: #987654;
+
+.uno{
+    font-size: 30px;
+    color: #007286;
+    width: 50%;
+    background: $fondo;
+    height: $altura * 2;
+}
+
+#dos{
+    $tamaño: 20px;
+    font-size: $tamaño * 2;
+}
+
+##{tres}{
+    font-size: 30px;
+    color: $tres;
+}

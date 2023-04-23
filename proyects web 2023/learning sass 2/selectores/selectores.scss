@@ -1,0 +1,30 @@
+$altura: 100vh;
+$pospadre: relative;
+$poshijo: absolute;
+$fondohijo: rgba(0,0,0,.6);
+$fondoefecto: transparent;
+
+.container{
+    min-height: $altura;
+    position: $pospadre;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &::before{
+        content: "";
+        position: $poshijo;
+        width: 100%;
+        height: 100%;
+        background: $fondohijo;
+    }
+
+    &:hover::before{
+        background:$fondoefecto;
+    }
+
+}
+
