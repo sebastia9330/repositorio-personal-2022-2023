@@ -4,6 +4,7 @@
 
 
 var div_usuarios = document.querySelector('#usuarios');
+var div_profe = document.querySelector('#profesor');
 var div_usuario = document.querySelector('#usuario');
 
 
@@ -20,15 +21,49 @@ function getUsuarios(){
         //console.log(usuarios)
         listadoUsuarios(users.data)
 
+            //return getUsuario();
+            return getInfo();
+        })
+        .then(data => {
+            div_profe.innerHTML = data;
             return getUsuario();
         })
         .then(data => data.json())
         .then(usuario => {
             mostrarUsuario(usuario.data);
+        })
+        .catch(error => {
+            alert("Error en las peticiones");
         });
+        
 
 function getUsuario(){
     return fetch('https://reqres.in/api/users/2');
+}
+
+function getInfo(){
+    var profesor = {
+        nombre: "Samuel",
+        apellido: "Carrero",
+        edad: "18"
+    };
+    
+    return new Promise((resolve, reject) => {
+        var profe_string = "";
+        setTimeout(function(){
+            profe_string = JSON.stringify(profesor);
+
+            if(typeof profe_string != 'string' || profe_string == "")return reject('error')
+
+            return resolve(profe_string)
+        }, 3000);
+            
+
+        
+    });
+    
+
+    
 }
     
 function listadoUsuarios(usuarios){
