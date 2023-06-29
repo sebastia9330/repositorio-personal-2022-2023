@@ -47,3 +47,7 @@ document.write("<h3>listado de nombres</h3>");
 nombres.forEach((nombre) => {
     document.write(nombre + "<br/>");
 });
+
+//numero aleatorio
+
+console.log(Math.ceil(Math.random()*1000));
