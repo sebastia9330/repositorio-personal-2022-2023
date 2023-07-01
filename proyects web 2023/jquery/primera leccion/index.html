@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendiendo jQuery</title>
 
-    
+    <style>
+        .parrafo{
+            border: 5px dashed black;
+        }
+
+        .grande{
+            font-size: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Aprendiendo jQuery</h1>
-    <p id="rojo">practicando 1</p>
-    <p id="amarillo">practicando 2</p>
-    <p id="verde">practicando 3</p>
-
+    <h1 class="parrafo">Aprendiendo jQuery</h1>
+    <ul>
+        <li><a href="inicio" title="inicio">inicio</a></li>
+        <li><a href="contacto">contacto</a></li>
+        <li><a href="catalogo">catalogo</a></li>
+        <li><a href="mapa"></a>mapa</li>
+    </ul>
+    <p id="rojo" class="sinborde">practicando 1</p>
+    <p id="amarillo" class="parrafo">practicando 2</p>
+    <p id="verde" class="sinborde">practicando 3</p>
+    <p class="parrafo">parrafo</p>
+    <p class="sinborde">nada nada de nada</p>
     <!--<script
     src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
