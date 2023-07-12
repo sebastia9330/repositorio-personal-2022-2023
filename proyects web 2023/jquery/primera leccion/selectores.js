@@ -28,4 +28,11 @@ $(document).ready(function(){
 
     //Selectores de atributo
     $('[title="inicio"]').css('background','#ccc')
+
+    //otros
+    //$('p, a').addClass('margen-superior');
+
+    //buscar en arboles grandes
+    var busqueda = $("#caja").eq(0).parent().parent().parent().find('[title="inicio"]');
+    console.log(busqueda);
 });

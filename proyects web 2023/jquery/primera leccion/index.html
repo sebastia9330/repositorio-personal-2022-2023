@@ -13,6 +13,13 @@
         .grande{
             font-size: 40px;
         }
+        .margen-superior{
+            margin-top: 45px;
+            display: block;
+        }
+        .resaltado{
+            border-bottom: 3px solid #a14900;
+        }
     </style>
 </head>
 <body>
@@ -21,13 +28,22 @@
         <li><a href="inicio" title="inicio">inicio</a></li>
         <li><a href="contacto">contacto</a></li>
         <li><a href="catalogo">catalogo</a></li>
-        <li><a href="mapa"></a>mapa</li>
+        <li><a href="mapa">mapa</a></li>
     </ul>
     <p id="rojo" class="sinborde">practicando 1</p>
     <p id="amarillo" class="parrafo">practicando 2</p>
     <p id="verde" class="sinborde">practicando 3</p>
     <p class="parrafo">parrafo</p>
     <p class="sinborde">nada nada de nada</p>
+
+    <div id="caja">
+        <p>Hola soy una caja</p>
+            <ul>
+                <li>elemento 1</li>
+                <li class="resaltado">elemento 2</li>
+            </ul>
+            <span class="resaltado">Soy un span</span>
+    </div>
     <!--<script
     src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
