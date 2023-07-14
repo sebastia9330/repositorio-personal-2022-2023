@@ -14,10 +14,47 @@
         text-align: center;
         line-height: 200px;
     }
+
+    input{
+        padding: 10px;
+        width: 300px;
+        font-size: 20px;
+    }
+
+    #datos{
+        border: 4px dashed gray;
+        padding: 10px;
+        width: 250px;
+        height: 250px;
+        margin-top: 20px;
+        display: none;
+    }
+
+    #sigueme{
+        width: 20px;
+        height: 20px;
+        background-color: #9b0000;
+        border: 6px dashed green;
+        border-radius: 50%;
+        position: absolute;
+
+    }
 </style>
 <body>
     <h1 class="parrafo">Eventos en jquery</h1>
     
+    <div id="sigueme"></div>
+
+    <form>
+        <input type="text" id="nombre">
+    </form>
+
+    <div id="datos">
+
+    </div>
+
+    <br>
+
     <div id="caja">
         Soy una caja
     </div>
