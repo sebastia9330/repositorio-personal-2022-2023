@@ -36,6 +36,9 @@ $(document).ready(function(){
         $('#caja').animate({marginLeft: "500px",
                             height: '100px',
                         lineHeight: '85px'}, 'slow')
-                            .animate({borderRadius: "50px"}, 'fast');
+                            .animate({borderRadius: "50px"}, 'fast', function(){
+                                console.log("animacion realizada")
+                            });
     })
+    
 })
