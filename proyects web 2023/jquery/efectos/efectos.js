@@ -30,5 +30,12 @@ $(document).ready(function(){
 
     $('#todoenuno').click(function(){
         $('#caja').toggle();
+    });
+
+    $("#animame").click(function(){
+        $('#caja').animate({marginLeft: "500px",
+                            height: '100px',
+                        lineHeight: '85px'}, 'slow')
+                            .animate({borderRadius: "50px"}, 'fast');
     })
 })
