@@ -1,3 +1,8 @@
+:root{
+    --color-fondo: red;
+    --font-color: gray;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +11,8 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    background-color: var(--color-fondo);
+    color: var(--font-color);
 }
 
 header, footer{
