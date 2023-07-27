@@ -1,5 +1,5 @@
 :root{
-    --color-fondo: red;
+    --color-fondo: rgb(255, 255, 255);
     --font-color: gray;
 }
 
@@ -13,6 +13,11 @@ body{
     text-align: center;
     background-color: var(--color-fondo);
     color: var(--font-color);
+    transition: 400ms;
+    -webkit-transition: 400ms;
+    -moz-transition: 400ms;
+    -ms-transition: 400ms;
+    -o-transition: 400ms;
 }
 
 header, footer{
@@ -55,6 +60,7 @@ img{
     margin: 20px 0;
     box-shadow: 0 0 15px #3b3939;
     transition: 200ms;
+    user-select: none;
 }
 
 .tarjeta:hover{
