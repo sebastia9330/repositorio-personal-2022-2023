@@ -1,5 +1,5 @@
 export interface persona{
     nombre: string,
-    regala: string,
-    muestra: boolean
+    regala?: string,
+    muestra?: boolean
 }

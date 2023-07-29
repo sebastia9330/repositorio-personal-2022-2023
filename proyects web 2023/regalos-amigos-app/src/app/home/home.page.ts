@@ -12,18 +12,33 @@ export class HomePage {
 
   eventos:evento[] = [
     {
+      id: 1,
       titulo: "Evento 1",
-      personas: ["Juan", "Maria"],
+      participantes: [{
+        nombre: "Juan",
+      },
+      {
+        nombre: "Maria"
+      }],
       fecha: new Date()
     },
     {
+      id: 2,
       titulo: "Evento 2",
-      personas: ["Juan"],
+      participantes: [{
+        nombre: 'juan', 
+      }],
       fecha: new Date()
     },
     {
+      id: 3,
       titulo: "Evento 3",
-      personas: ["Juan", "Maria", "Pepe"],
+      participantes: [{
+        nombre: "Juan"}, 
+        {nombre: "Maria"
+      }, 
+      {nombre: "Pepe"
+    }],
       fecha: new Date()
     }
   ]

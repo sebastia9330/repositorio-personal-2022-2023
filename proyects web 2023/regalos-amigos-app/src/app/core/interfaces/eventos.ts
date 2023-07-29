@@ -1,5 +1,9 @@
+import { persona } from "./persona";
+
 export interface evento{
+    id: number,
     titulo: string,
-    personas: string[],
-    fecha: Date
+    participantes: persona[],
+    fecha: Date,
+    finalizado?: boolean
 }
