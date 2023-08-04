@@ -24,7 +24,9 @@ export class EventosService {
         nombre: "Juan",
       },
       {
-        nombre: "Maria"
+        nombre: "Maria",
+        muestra: true,
+        regala: "Juan"
       }],
       fecha: new Date()
     },
@@ -32,7 +34,7 @@ export class EventosService {
       id: 2,
       titulo: "Evento 2",
       participantes: [{
-        nombre: 'juan', 
+        nombre: 'Juan', 
       }],
       fecha: new Date()
     },
