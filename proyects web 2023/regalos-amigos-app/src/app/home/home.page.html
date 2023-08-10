@@ -22,6 +22,11 @@
       <p>Cantidad de participantes: {{evento.participantes.length}}</p>
       <p>Fecha del Evento {{evento.fecha}}</p>
     </ion-card-content>
-  
   </ion-card>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button [routerLink]="['/nuevo-evento']" routerLinkActive="router-link-active">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+    
+  </ion-fab>
 </ion-content>
