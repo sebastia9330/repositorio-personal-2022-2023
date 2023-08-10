@@ -3,3 +3,8 @@ export interface persona{
     regala?: string,
     muestra?: boolean
 }
+
+export const personaVacia:persona = {
+    nombre: "",
+    muestra: false,
+}

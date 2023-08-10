@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { evento } from 'src/app/core/interfaces/eventos';
+import { personaVacia } from 'src/app/core/interfaces/persona';
 
 @Component({
   selector: 'app-nuevo-evento',
@@ -12,6 +14,13 @@ export class NuevoEventoPage implements OnInit {
     private navCtrl: NavController
   ) { }
 
+  eventoActual: evento = {
+    titulo: "",
+    participantes: [personaVacia, personaVacia, personaVacia],
+    fecha: new Date(),
+  }
+  hoy = new Date().toISOString();
+
   ngOnInit() {
   }
   
@@ -20,6 +29,6 @@ export class NuevoEventoPage implements OnInit {
   }
 
   guardar(){
-    
+
   }
 }

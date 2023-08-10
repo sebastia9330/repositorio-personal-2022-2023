@@ -1,7 +1,7 @@
 import { persona } from "./persona";
 
 export interface evento{
-    id: number,
+    id?: number,
     titulo: string,
     participantes: persona[],
     fecha: Date,
