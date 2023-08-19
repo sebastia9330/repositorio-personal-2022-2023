@@ -16,7 +16,7 @@ export class NuevoEventoPage implements OnInit {
 
   eventoActual: evento = {
     titulo: "",
-    participantes: [personaVacia, personaVacia, personaVacia],
+    participantes: [{...personaVacia},{...personaVacia},{...personaVacia}],
     fecha: new Date(),
   }
   hoy = new Date().toISOString();
@@ -28,7 +28,12 @@ export class NuevoEventoPage implements OnInit {
     this.navCtrl.navigateBack("")
   }
 
+  cambiarFecha(evento: any){
+    this.eventoActual.fecha = new Date(evento.detail.value)
+  }
+  
   guardar(){
-
+    console.log("GUARDAR",this.eventoActual)
+    
   }
 }
