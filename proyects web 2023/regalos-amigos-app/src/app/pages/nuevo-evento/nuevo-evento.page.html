@@ -12,7 +12,7 @@
   </ion-header>
   <ion-card>
     <ion-header>
-      <ion-title class="title">Nombre del Evento</ion-title>
+      <ion-title class="title">{{eventoActual.titulo === '' ? 'Nuevo evento' : eventoActual.titulo}}</ion-title>
     </ion-header>
     <ion-card-content>
       <form>

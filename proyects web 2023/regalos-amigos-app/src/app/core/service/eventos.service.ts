@@ -1,19 +1,35 @@
 import { Injectable } from '@angular/core';
 import { evento } from '../interfaces/eventos';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventosService {
 
-  constructor() { }
+  constructor(
+    private storage: StorageService
+  ) { }
 
-  getEventos(): evento[]{
-    return this.eventosDefault;
+  async getEventos(): Promise<evento[]>{
+    return await this.storage.get("eventos");
   }
 
   getEvento(id: number){
     return this.eventosDefault.find(evento => evento.id == id);
+  }
+
+  async setNuevoEvento(evento:evento){
+    const nuevoEvento:evento = evento;
+    const eventos = await this.getEventos();
+    if(!eventos || eventos.length === 0){
+      nuevoEvento.id = 1;
+    }else{
+      nuevoEvento.id = eventos[eventos.length -1].id! +1
+    }
+    eventos.push(evento)
+    this.storage.set("eventos", eventos);
+    return nuevoEvento.id
   }
 
   eventosDefault:evento[] = [

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { evento } from 'src/app/core/interfaces/eventos';
 import { personaVacia } from 'src/app/core/interfaces/persona';
+import { EventosService } from 'src/app/core/service/eventos.service';
 
 @Component({
   selector: 'app-nuevo-evento',
@@ -11,7 +12,8 @@ import { personaVacia } from 'src/app/core/interfaces/persona';
 export class NuevoEventoPage implements OnInit {
 
   constructor(
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private es:EventosService
   ) { }
 
   eventoActual: evento = {
@@ -28,7 +30,8 @@ export class NuevoEventoPage implements OnInit {
     this.navCtrl.navigateBack("")
   }
 
-  guardar(){
-
+  async guardar(){
+    await this.es.setNuevoEvento(this.eventoActual);
+    this.navCtrl.navigateBack("")
   }
 }
