@@ -30,18 +30,13 @@ export class NuevoEventoPage implements OnInit {
     this.navCtrl.navigateBack("")
   }
 
-<<<<<<< HEAD
-  async guardar(){
-    await this.es.setNuevoEvento(this.eventoActual);
-    this.navCtrl.navigateBack("")
-=======
   cambiarFecha(evento: any){
     this.eventoActual.fecha = new Date(evento.detail.value)
   }
   
-  guardar(){
-    console.log("GUARDAR",this.eventoActual)
-    
->>>>>>> d670d724c849222414c7a8f7856ad939fbf6435e
+
+  async guardar(){
+    await this.es.setNuevoEvento(this.eventoActual);
+    this.navCtrl.navigateBack("")
   }
 }

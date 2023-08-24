@@ -21,13 +21,14 @@ export class EventosService {
 
   async setNuevoEvento(evento:evento){
     const nuevoEvento:evento = evento;
-    const eventos = await this.getEventos();
+    let eventos:evento[] = await this.getEventos();
     if(!eventos || eventos.length === 0){
+      eventos = []
       nuevoEvento.id = 1;
     }else{
-      nuevoEvento.id = eventos[eventos.length -1].id! +1
+      nuevoEvento.id = eventos[eventos.length -1].id!+1
     }
-    eventos.push(evento)
+    eventos.push(evento);
     this.storage.set("eventos", eventos);
     return nuevoEvento.id
   }
