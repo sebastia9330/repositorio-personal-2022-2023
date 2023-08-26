@@ -23,8 +23,7 @@ export class EventoPage implements OnInit {
   ) { 
     ar.params.subscribe(param => {
       console.log(param["id"]);
-      this.evento = this.es.getEvento(param["id"])
-      
+      this.es.getEvento(param["id"]).then(evento => this.evento = evento);
     })
   }
 

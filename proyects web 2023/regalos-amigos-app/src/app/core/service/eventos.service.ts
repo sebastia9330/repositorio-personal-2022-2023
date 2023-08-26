@@ -15,8 +15,9 @@ export class EventosService {
     return await this.storage.get("eventos");
   }
 
-  getEvento(id: number){
-    return this.eventosDefault.find(evento => evento.id == id);
+  async getEvento(id: number){
+    const eventos = await this.getEventos();
+    return eventos.find(evento => evento.id == id);
   }
 
   async setNuevoEvento(evento:evento){
@@ -32,40 +33,5 @@ export class EventosService {
     this.storage.set("eventos", eventos);
     return nuevoEvento.id
   }
-
-  eventosDefault:evento[] = [
-    {
-      id: 1,
-      titulo: "Evento 1",
-      participantes: [{
-        nombre: "Juan",
-      },
-      {
-        nombre: "Maria",
-        muestra: true,
-        regala: "Juan"
-      }],
-      fecha: new Date()
-    },
-    {
-      id: 2,
-      titulo: "Evento 2",
-      participantes: [{
-        nombre: 'Juan', 
-      }],
-      fecha: new Date()
-    },
-    {
-      id: 3,
-      titulo: "Evento 3",
-      participantes: [{
-        nombre: "Juan"}, 
-        {nombre: "Maria"
-      }, 
-      {nombre: "Pepe"
-    }],
-      fecha: new Date()
-    }
-  ]
 
 }
