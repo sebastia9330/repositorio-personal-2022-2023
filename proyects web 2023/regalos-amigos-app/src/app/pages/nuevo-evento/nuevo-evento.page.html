@@ -31,8 +31,14 @@
             <!-- <ion-icon id="basura" name="trash-bin-outline" (click)="eliminarParticipante(i)"></ion-icon> -->
             <ion-label label="amigo" position="floating">Participante {{i+1}}</ion-label>
             <ion-input aria-label="amigo" placeholder="Nombre de participante" [(ngModel)]="eventoActual.participantes[i].nombre" name="{{'participante' + i}}"></ion-input>
+            <ion-icon id="basura" name="trash-bin-outline" (click)="eliminarParticipante(i)"></ion-icon>
           </ion-item>
         </ion-list>
+        <div class="flex-center">
+          <ion-button shape="round" (click)="agregarParticipantes()">
+            <ion-icon name="add-outline"></ion-icon>
+          </ion-button>
+        </div>
         <div class="flex-even">
           <ion-button fill='outline' (click)="descartar()">Atras</ion-button>
           <ion-button  type="submit" [disabled]="formulario.invalid">Guardar</ion-button>

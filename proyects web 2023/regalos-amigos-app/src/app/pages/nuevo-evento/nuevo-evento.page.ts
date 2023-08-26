@@ -39,4 +39,12 @@ export class NuevoEventoPage implements OnInit {
     await this.es.setNuevoEvento(this.eventoActual);
     this.navCtrl.navigateBack("")
   }
+
+  agregarParticipantes(){
+    this.eventoActual.participantes.push({...personaVacia});
+  }
+
+  eliminarParticipante(i:number){
+    this.eventoActual.participantes.splice(i,1)
+  }
 }
