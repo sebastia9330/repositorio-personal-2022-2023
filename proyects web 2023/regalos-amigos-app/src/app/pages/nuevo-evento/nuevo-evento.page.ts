@@ -36,7 +36,8 @@ export class NuevoEventoPage implements OnInit {
   
 
   async guardar(){
-    await this.es.setNuevoEvento(this.eventoActual);
+    const eventoSorteado = this.es.sortearEvento(this.eventoActual);
+    await this.es.setNuevoEvento(eventoSorteado);
     this.navCtrl.navigateBack("")
   }
 

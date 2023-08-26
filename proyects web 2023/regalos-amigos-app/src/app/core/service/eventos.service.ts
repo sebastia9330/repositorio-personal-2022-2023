@@ -34,4 +34,25 @@ export class EventosService {
     return nuevoEvento.id
   }
 
+  sortearEvento(evento:evento):evento{
+    const nuevoEvento = evento;
+    let participantesDisponibles:string[] = [];
+    evento.participantes.forEach((participante, i) =>{
+      if(participante.nombre === ""){
+        nuevoEvento.participantes.splice(i,1);
+        participantesDisponibles.push(evento.participantes[i].nombre)
+      }else{
+        participantesDisponibles.push(participante.nombre);
+      }
+      let posicionAleatoria:number
+      do{
+        posicionAleatoria = Math.floor(Math.random()*participantesDisponibles.length)
+      }
+      while(participante.nombre === participantesDisponibles[posicionAleatoria])
+        participante.regala = participantesDisponibles[posicionAleatoria];
+      participantesDisponibles.splice(posicionAleatoria,1);
+    })
+    return nuevoEvento;
+  }
+
 }
