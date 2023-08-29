@@ -20,7 +20,7 @@
       <ion-item *ngFor="let participantes of evento?.participantes, index as i">
         <ion-label>{{participantes.nombre}}</ion-label>
         <ion-label>Regala a: {{participantes.muestra ? participantes.regala : ' ********'}}</ion-label>
-        <ion-icon name='{{participantes.muestra ? "eye-off-outline" : "eye-outline"}}' (click)="!participantes.muestra ? participantes.muestra = !participantes.muestra : modalMostrar(i)"></ion-icon>
+        <ion-icon name='{{participantes.muestra ? "eye-off-outline" : "eye-outline"}}' (click)="participantes.muestra ? participantes.muestra = !participantes.muestra : modalMostrar(i)"></ion-icon>
       </ion-item>
     </ion-list>
   </ion-card>

@@ -36,10 +36,10 @@ export class EventoPage implements OnInit {
       subHeader: '¿Estás seguro de que querés ver esta informacion?',
       buttons: [
         {
-          text: 'Ocultar',
-          role: "Ocultar",
+          text: 'Mostrar',
+          role: "Mostrar",
           data: {
-            action: 'Ocultar',
+            action: 'Mostrar',
           },
         },
         {
@@ -56,7 +56,7 @@ export class EventoPage implements OnInit {
 
     const result = await actionSheet.onDidDismiss();
     this.result = JSON.stringify(result, null, 2);
-    if(result.role === "Ocultar") this.evento!.participantes[i].muestra = !this.evento?.participantes[i].muestra
+    if(result.role === "Mostrar") this.evento!.participantes[i].muestra = !this.evento?.participantes[i].muestra
   }
 
   atras(){

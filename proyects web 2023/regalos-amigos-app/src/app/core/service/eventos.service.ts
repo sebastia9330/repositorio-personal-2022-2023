@@ -44,7 +44,9 @@ export class EventosService {
       }else{
         participantesDisponibles.push(participante.nombre);
       }
-      let posicionAleatoria:number
+    })
+    nuevoEvento.participantes.forEach((participante) =>{
+      let posicionAleatoria:number | undefined;
       do{
         posicionAleatoria = Math.floor(Math.random()*participantesDisponibles.length)
       }
