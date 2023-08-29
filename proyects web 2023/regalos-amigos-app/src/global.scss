@@ -35,3 +35,13 @@
     display: flex;
     justify-content: center;
 }
+
+.evento-terminado{
+    border: 2px solid red;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}

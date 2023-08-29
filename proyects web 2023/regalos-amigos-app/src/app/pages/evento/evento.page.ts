@@ -13,6 +13,7 @@ export class EventoPage implements OnInit {
 
   evento?: evento;
   result?: string;
+  ts: any;
 
   constructor(
     private ar: ActivatedRoute,
@@ -63,9 +64,38 @@ export class EventoPage implements OnInit {
     this.navCtrl.navigateBack("")
   }
 
-  modalBorrer(){
+  async modalBorrar(){
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Eliminar evento',
+      subHeader: '¿Estás seguro de que quierés eliminar este evento?',
+      buttons: [
+        {
+          text: 'Borrar',
+          role: "borrar",
+          data: {
+            action: 'borrar',
+          },
+        },
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          data: {
+            action: 'cancel',
+          },
+        },
+      ],
+    });
 
-  }
+    await actionSheet.present();
+
+    const result = await actionSheet.onDidDismiss();
+    this.result = JSON.stringify(result, null, 2);
+    if(result.role === "cancel") return;
+    if(result.role === "borrar"){
+      this.es.borrarEvento(this.evento!.id!)
+    }
+    this.atras()
+}
   
   async modalResortear(){
       const actionSheet = await this.actionSheetCtrl.create({
@@ -100,8 +130,39 @@ export class EventoPage implements OnInit {
       }
   }
   
-  modalFinalizar(){
+  async modalFinalizar() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Cambiando estado al evento',
+      subHeader: this.evento!.finalizado ? "¿Desea restaurar este evento?" : "¿Desea finalizar y bloquear este evento?",
+      buttons: [
+        {
+          text: this.evento!.finalizado ? "Restaurar evento" : "Terminar evento",
+          role: "cambiar",
+          data: {
+            action: 'cambiar',
+          },
+        },
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          data: {
+            action: 'cancel',
+          },
+        },
+      ],
+    });
 
+    await actionSheet.present();
+
+    const result = await actionSheet.onDidDismiss();
+    this.result = JSON.stringify(result, null, 2);
+    if(result.role === "cancel") return;
+    if(result.role === "cambiar") {
+      this.evento!.finalizado = !this.evento!.finalizado
+      this.es.editEvento(this.evento!);
+    }
+    if(this.evento!.finalizado) this.atras();
   }
+  
 
 }

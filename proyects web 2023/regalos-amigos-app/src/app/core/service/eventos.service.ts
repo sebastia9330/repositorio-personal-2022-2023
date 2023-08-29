@@ -15,7 +15,7 @@ export class EventosService {
     return await this.storage.get("eventos");
   }
 
-  async getEvento(id: number){
+  async getEvento(id: number): Promise<evento | undefined>{
     const eventos = await this.getEventos();
     return eventos.find(evento => evento.id == id);
   }
@@ -66,6 +66,12 @@ export class EventosService {
     editEvento.participantes.forEach(participante => participante.muestra = false)
     nuevoEventos.push(editEvento);
     nuevoEventos.sort((a,b) => a.id! - b.id!);
+    this.storage.set("eventos",nuevoEventos);
+  }
+
+  async borrarEvento(id:number){
+    const eventos = await this.storage.get("eventos");
+    const nuevoEventos = eventos.filter((evento:evento) => evento.id != id)
     this.storage.set("eventos",nuevoEventos);
   }
 
