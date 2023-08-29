@@ -63,4 +63,45 @@ export class EventoPage implements OnInit {
     this.navCtrl.navigateBack("")
   }
 
+  modalBorrer(){
+
+  }
+  
+  async modalResortear(){
+      const actionSheet = await this.actionSheetCtrl.create({
+        header: 'Resorteando evento',
+        subHeader: '¿Estás seguro de que querés resortear este evento?',
+        buttons: [
+          {
+            text: 'Resortear',
+            role: "resortear",
+            data: {
+              action: 'resortear',
+            },
+          },
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            data: {
+              action: 'cancel',
+            },
+          },
+        ],
+      });
+  
+      await actionSheet.present();
+  
+      const result = await actionSheet.onDidDismiss();
+      this.result = JSON.stringify(result, null, 2);
+      if(result.role === "cancel") return;
+      if(result.role === "resortear"){
+        const NuevoEvento = this.es.sortearEvento(this.evento!);
+        this.es.editEvento(NuevoEvento);
+      }
+  }
+  
+  modalFinalizar(){
+
+  }
+
 }

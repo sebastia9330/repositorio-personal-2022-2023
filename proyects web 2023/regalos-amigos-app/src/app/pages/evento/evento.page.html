@@ -15,6 +15,18 @@
       <ion-card-title>
         {{evento?.titulo}}
       </ion-card-title>
+
+      <div>
+        <ion-button [fill]="'outline'" (click)="modalBorrer()">
+          <ion-icon id="basura" name="trash-bin-outline"></ion-icon>
+        </ion-button>
+        <ion-button [fill]="'outline'" (click)="modalResortear()">
+          <ion-icon name="repeat-outline"></ion-icon>
+        </ion-button>
+        <ion-button [fill]="'outline'" (click)="modalFinalizar()">
+          <ion-icon name="checkbox-outline"></ion-icon>
+        </ion-button>
+      </div>
     </ion-card-header>
     <ion-list>
       <ion-item *ngFor="let participantes of evento?.participantes, index as i">
