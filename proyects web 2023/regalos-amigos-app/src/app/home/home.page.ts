@@ -11,6 +11,7 @@ import { ViewWillEnter } from '@ionic/angular';
 export class HomePage implements ViewWillEnter {
 
   eventos?:evento[];
+  filter: "abiertos" | "finalizados" | "todos" = "abiertos"
 
   constructor(
     private es: EventosService,
@@ -18,11 +19,13 @@ export class HomePage implements ViewWillEnter {
     
   }
   ionViewWillEnter(): void {
-    this.es.getEventos().then(eventos =>{
+    this.getEventos();
+  }
+
+
+  getEventos(){
+    this.es.getEventos(this.filter).then(eventos =>{
       this.eventos = eventos ? eventos : []
     })
   }
-
-  
-
 }

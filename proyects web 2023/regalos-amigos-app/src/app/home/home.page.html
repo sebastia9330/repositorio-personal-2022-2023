@@ -13,6 +13,18 @@
     </ion-toolbar>
   </ion-header>
 
+
+  <ion-segment value="pendientes" (ionChange)="getEventos()" [(ngModel)]="filter">
+    <ion-segment-button value="pendientes">
+      <ion-label>Pendientes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="finalizado">
+      <ion-label>finalizado</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="todos">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+  </ion-segment>
   <ion-card *ngFor="let evento of eventos" [routerLink]="['/evento', evento.id]" routerLinkActive="router-link-active" [ngClass]="{'evento-terminado' : evento?.finalizado}">
     <ion-card-header>
       <ion-card-title>{{evento.titulo}}</ion-card-title>

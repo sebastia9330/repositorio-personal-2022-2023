@@ -11,8 +11,17 @@ export class EventosService {
     private storage: StorageService
   ) { }
 
-  async getEventos(): Promise<evento[]>{
-    return await this.storage.get("eventos");
+  async getEventos(filter: "abiertos" | "finalizados" | "todos" = "todos"): Promise<evento[]>{
+    const eventos = await (this.storage.get("eventos")) || [];
+    switch(filter){
+      case "abiertos":
+        return eventos.filter((evento:evento) => !evento.finalizado);
+      case "finalizados":
+        return eventos.filter((evento:evento) => evento.finalizado);
+      case "todos":
+        return eventos
+    }
+
   }
 
   async getEvento(id: number): Promise<evento | undefined>{
