@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActionSheetController, NavController } from '@ionic/angular';
+import { ActionSheetController, NavController, ToastController } from '@ionic/angular';
 import { evento } from 'src/app/core/interfaces/eventos';
 import { EventosService } from 'src/app/core/service/eventos.service';
+import { ToastService } from 'src/app/core/service/toast.service';
 
 @Component({
   selector: 'app-evento',
@@ -13,14 +14,13 @@ export class EventoPage implements OnInit {
 
   evento?: evento;
   result?: string;
-  ts: any;
 
   constructor(
     private ar: ActivatedRoute,
     private es: EventosService,
     private actionSheetCtrl: ActionSheetController,
-    private navCtrl: NavController
-
+    private navCtrl: NavController,
+    private ts:ToastService
   ) { 
     ar.params.subscribe(param => {
       console.log(param["id"]);
@@ -94,6 +94,7 @@ export class EventoPage implements OnInit {
     if(result.role === "borrar"){
       this.es.borrarEvento(this.evento!.id!)
     }
+    this.ts.presentToast("Evento eliminado con exito")
     this.atras()
 }
   
@@ -160,7 +161,9 @@ export class EventoPage implements OnInit {
     if(result.role === "cambiar") {
       this.evento!.finalizado = !this.evento!.finalizado
       this.es.editEvento(this.evento!);
+      this.ts.presentToast("Evento vuelto a sortear con exito")
     }
+    this.ts.presentToast(this.evento!.finalizado ? "Evento marcado como finalizado" : "Evento reabierto")
     if(this.evento!.finalizado) this.atras();
   }
   

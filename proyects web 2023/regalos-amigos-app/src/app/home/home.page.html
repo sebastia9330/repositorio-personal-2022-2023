@@ -15,10 +15,10 @@
 
 
   <ion-segment value="pendientes" (ionChange)="getEventos()" [(ngModel)]="filter">
-    <ion-segment-button value="pendientes">
+    <ion-segment-button value="abiertos">
       <ion-label>Pendientes</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="finalizado">
+    <ion-segment-button value="finalizados">
       <ion-label>finalizado</ion-label>
     </ion-segment-button>
     <ion-segment-button value="todos">
@@ -32,7 +32,7 @@
   
     <ion-card-content>
       <p>Cantidad de participantes: {{evento.participantes.length}}</p>
-      <p>Fecha del Evento {{evento.fecha}}</p>
+      <p>Fecha del Evento {{getDiasHastaEvento(evento.fecha)}}</p>
     </ion-card-content>
   </ion-card>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
