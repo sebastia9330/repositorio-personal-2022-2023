@@ -47,3 +47,29 @@ h1{
 .ganador{
     background-color: #636363;
 }
+
+dialog{
+    text-align: center;
+    min-width: 40vw;
+    background-color: #d6d6d673;
+    padding: 5rem;
+    border: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+dialog h2{
+    font-size: xx-large;
+}
+
+dialog button{
+    padding: 1rem;
+    font-size: large;
+}
+
+dialog::backdrop{
+    backdrop-filter: blur(3px);
+}
