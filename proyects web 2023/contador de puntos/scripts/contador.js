@@ -4,7 +4,10 @@ export class Contador{
 
     constructor(equipo, containerElement, cuentaInicial = 0){
         this.equipo = equipo
+        this.numero = cuentaInicial;
         containerElement.querySelector("h2").innerText = equipo;
+        containerElement.querySelector(".agregar").addEventListener("click", ()=>this.agregar());
+        containerElement.querySelector(".restar").addEventListener("click", ()=>this.restar());
     }
 
     agregar(cantidad = 1){
