@@ -11,6 +11,6 @@ if(e1 > e2){
 }else{
     document.write(h2 + " tiene " + e2 + " años" + " y es mayor que " + h1 + "<br/>")
     dife = e2 - e1
-    document.write("la diferencia de edad es de: " + dife + "años")
+    document.write("la diferencia de edad es de: " + dife + " años")
 }
 
