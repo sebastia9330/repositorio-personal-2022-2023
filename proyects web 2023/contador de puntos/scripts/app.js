@@ -14,7 +14,4 @@ document.getElementById("aceptar").addEventListener("click",()=> {
     modal.close();
 });
 
-p1.agregar(3);
-p1.reset();
-p1.agregar(7);
 
