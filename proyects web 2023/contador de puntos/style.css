@@ -1,3 +1,9 @@
+:root{
+    --top-vertical: 0px;
+    --left-horizontal: 32px;
+    --dimensiones-grupo: 170px;
+}
+
 *{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -45,4 +51,50 @@ button{
     background-color: #474747;
     border-radius: 5px;
     color: antiquewhite;
+}
+
+img{
+    height: var(--dimensiones-grupo);
+}
+
+.grupo{
+    position: relative;
+    width: var(--dimensiones-grupo);
+    height: var(--dimensiones-grupo);
+    margin: 20px;
+}
+
+.fosforo1{
+    position: absolute;
+    transform: rotate(90deg);
+    top: -80px;
+    left: var(--left-horizontal);
+}
+
+.fosforo2{
+    position: absolute;
+    transform: rotate(180deg);
+    left: 125px;
+    top: var(--top-vertical);
+}
+
+.fosforo3{
+    position: absolute;
+    transform: rotate(270deg);
+    top: 77px;
+    left: var(--left-horizontal);
+}
+
+.fosforo4{
+    position: absolute;
+    transform: rotate(0deg);
+    left: 0px;
+    top: var(--top-vertical);
+}
+
+.fosforo5{
+    position: absolute;
+    transform: rotate(45deg);
+    left: 65px;
+    top: 5px
 }

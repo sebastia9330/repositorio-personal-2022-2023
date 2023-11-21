@@ -32,16 +32,24 @@ export class Contador{
 
     actualizarCuenta(){
         console.log(this.numero);
-
         const fosforosActuales = this.containerElement.querySelectorAll("img");
-        if(fosforosActuales){
-            fosforosActuales.forEach(fosforo => this.cuentaElement.removeChild(fosforo))
+        const gruposActuales = this.containerElement.querySelectorAll(".grupo");
+        
+        if(gruposActuales.length >= 1){
+            gruposActuales.forEach(grupo => this.cuentaElement.removeChild(grupo))
         }
 
+        let grupoActual;
         for (let i = 0; i < this.numero; i++) {
+            if(i%5 === 0){
+                grupoActual = document.createElement("div");
+                grupoActual.classList.add("grupo");
+                this.cuentaElement.appendChild(grupoActual)
+            }
             const nuevoFosforo = document.createElement("img");
             nuevoFosforo.src = "IMG/fosforo.png";
-            this.cuentaElement.appendChild(nuevoFosforo);
+            nuevoFosforo.classList.add("fosforo"+(i%5+1))
+            grupoActual.appendChild(nuevoFosforo);
         }
     }
 }
