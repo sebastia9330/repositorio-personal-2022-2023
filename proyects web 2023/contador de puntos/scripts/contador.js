@@ -32,11 +32,12 @@ export class Contador{
 
     actualizarCuenta(){
         console.log(this.numero);
-        const fosforosActuales = this.containerElement.querySelectorAll("img");
         const gruposActuales = this.containerElement.querySelectorAll(".grupo");
+        const separadoresActuales = this.cuentaElement.querySelectorAll(".separador")
         
         if(gruposActuales.length >= 1){
             gruposActuales.forEach(grupo => this.cuentaElement.removeChild(grupo))
+            separadoresActuales.forEach(separador => this.cuentaElement.removeChild(separador))
         }
 
         let grupoActual;
@@ -44,7 +45,12 @@ export class Contador{
             if(i%5 === 0){
                 grupoActual = document.createElement("div");
                 grupoActual.classList.add("grupo");
-                this.cuentaElement.appendChild(grupoActual)
+                if(i%15 === 0 && i !== 0){
+                    const separador = document.createElement("div");
+                    separador.classList.add("separador")
+                    this.cuentaElement.appendChild(separador);
+                }
+                this.cuentaElement.appendChild(grupoActual);
             }
             const nuevoFosforo = document.createElement("img");
             nuevoFosforo.src = "IMG/fosforo.png";

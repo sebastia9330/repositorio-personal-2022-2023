@@ -1,6 +1,6 @@
 :root{
     --top-vertical: 0px;
-    --left-horizontal: 32px;
+    --left-horizontal: 240px;
     --dimensiones-grupo: 170px;
 }
 
@@ -64,6 +64,14 @@ img{
     margin: 20px;
 }
 
+.separador{
+    position: relative;
+    left: 30%;
+    border-top: 2px solid black;
+    width: var(--dimensiones-grupo);
+    margin: 10px;
+}
+
 .fosforo1{
     position: absolute;
     transform: rotate(90deg);
@@ -74,7 +82,7 @@ img{
 .fosforo2{
     position: absolute;
     transform: rotate(180deg);
-    left: 125px;
+    left: 325px;
     top: var(--top-vertical);
 }
 
@@ -88,13 +96,15 @@ img{
 .fosforo4{
     position: absolute;
     transform: rotate(0deg);
-    left: 0px;
+    left: 150px;
     top: var(--top-vertical);
 }
 
 .fosforo5{
+    height: 190px;
     position: absolute;
     transform: rotate(45deg);
-    left: 65px;
-    top: 5px
+    left: 235px;
+    top: -10px
 }
+
