@@ -12,6 +12,7 @@ export class Contador{
         containerElement.querySelector("h2").innerText = equipo;
         containerElement.querySelector(".agregar").addEventListener("click", ()=>this.agregar());
         containerElement.querySelector(".restar").addEventListener("click", ()=>this.restar());
+        this.actualizarCuenta();
     }
 
     agregar(cantidad = 1){
