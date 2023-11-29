@@ -7,5 +7,5 @@ if(n1 > 0){
     document.write("<h1>El producto de la multiplicacion es: " + produ + "</h1>");
 }else{
     let sum = n2 + n3;
-    document.write("el resultado de la suma es: " + sum)
+    document.write("<h1>El resultado de la suma es: " + sum + "</h1>")
 }
