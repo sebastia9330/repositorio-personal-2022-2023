@@ -15,3 +15,5 @@ if(n1 === sum1){
 }else{
     document.write("<h1>Ninguno de los numero  coincide en la suma de los otros dos</h1>")
 }
+
+
