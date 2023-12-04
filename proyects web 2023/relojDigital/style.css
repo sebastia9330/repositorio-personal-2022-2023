@@ -1,0 +1,57 @@
+:root{
+    --escala: 70px;
+    --top-primera-fila: calc(var(--escala) * 1.83);
+    --top-segunda-fila: calc(var(--escala) * 5.5);
+    --left-horizontales: calc(var(--escala) * 1.5);
+}
+
+.numero{
+    position: relative;
+    height: calc(var(--escala) * 9);
+    width: calc(var(--escala) * 7);
+    background-color: blue;
+}
+
+.segmento{
+    position: absolute;
+    height: var(--escala);
+}
+
+.segmento:nth-child(1){
+    left: var(--left-horizontales);
+}
+
+.segmento:nth-child(2){
+    transform: rotate(90deg);
+    right: 0px;
+    top: var(--top-primera-fila);
+}
+
+.segmento:nth-child(3){
+    transform: rotate(90deg);
+    right: 0px;
+    top: var(--top-segunda-fila);
+}
+
+.segmento:nth-child(4){
+    left: var(--left-horizontales);
+    top: calc(var(--escala) * 7.3);
+}
+
+.segmento:nth-child(5){
+    transform: rotate(90deg);
+    left: -1.4em;
+    top: var(--top-segunda-fila);
+}
+
+.segmento:nth-child(6){
+    transform: rotate(90deg);
+    left: -1.4em;
+    top: var(--top-primera-fila);
+}
+
+.segmento:nth-child(7){
+    left: var(--left-horizontales);
+    top: calc(var(--escala) * 3.65);;
+}
+
