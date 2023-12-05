@@ -1,3 +1,5 @@
+/*Programa que muestra la division entre dos numero y su modulo*/
+
 let n1 = parseInt(prompt("ingresa el primer nuemero: "));
 let n2 = parseInt(prompt("ingresa el segundo numero: "));
 
