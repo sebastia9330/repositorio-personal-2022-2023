@@ -1,5 +1,5 @@
 :root{
-    --escala: 20px;
+    --escala: 25px;
     --top-primera-fila: calc(var(--escala) * 1.83);
     --top-segunda-fila: calc(var(--escala) * 5.5);
     --left-horizontales: calc(var(--escala) * 1.5);
@@ -12,6 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 #container{
@@ -75,6 +76,33 @@ body{
 .segmento:nth-child(7){
     left: var(--left-horizontales);
     top: calc(var(--escala) * 3.65);;
+}
+
+.doble_punto{
+    position: relative;
+}
+
+
+.punto{
+    position: absolute;
+    background-color: red;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    height: var(--escala);
+    width: var(--escala);
+}
+
+.punto:nth-child(1){
+    top: calc(var(--escala) * 1.5);
+    left: calc(var(--escala) * -0.6);
+}
+
+.punto:nth-child(2){
+    top: calc(var(--escala) * 6);
+    left: calc(var(--escala) * -0.6);
 }
 
 @keyframes glow {
