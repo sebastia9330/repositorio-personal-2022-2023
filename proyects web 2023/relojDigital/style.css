@@ -1,15 +1,25 @@
 :root{
-    --escala: 70px;
+    --escala: 20px;
     --top-primera-fila: calc(var(--escala) * 1.83);
     --top-segunda-fila: calc(var(--escala) * 5.5);
     --left-horizontales: calc(var(--escala) * 1.5);
+    --left-primera-columna: calc(var(--escala) * 3.6);
+}
+
+#container{
+    display: flex;
+    background-color: gray;
 }
 
 .numero{
     position: relative;
     height: calc(var(--escala) * 9);
     width: calc(var(--escala) * 7);
-    background-color: blue;
+}
+
+.on{
+    fill: red;
+    box-shadow: inset 0px 0px 15px 2px rgba(255, 0, 0, 0.65);
 }
 
 .segmento{
@@ -40,13 +50,13 @@
 
 .segmento:nth-child(5){
     transform: rotate(90deg);
-    left: -1.4em;
+    right: var(--left-primera-columna);
     top: var(--top-segunda-fila);
 }
 
 .segmento:nth-child(6){
     transform: rotate(90deg);
-    left: -1.4em;
+    right: var(--left-primera-columna);
     top: var(--top-primera-fila);
 }
 
