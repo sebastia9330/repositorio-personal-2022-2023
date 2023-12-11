@@ -43,3 +43,17 @@ function getDosNumeros(numero){
 }
 
 
+setInterval(() =>{
+    const hora = new Date();
+    const horas = getDosNumeros(hora.getHours().toString());
+    const minutos = getDosNumeros(hora.getMinutes().toString());
+    const segundos = getDosNumeros(hora.getSeconds().toString());
+
+    setNumero(0, horas[0]);
+    setNumero(1, horas[1]);
+    setNumero(2, minutos[0]);
+    setNumero(3, minutos[1]);
+    setNumero(4, segundos[0]);
+    setNumero(5, segundos[1]);
+},1000)
+
