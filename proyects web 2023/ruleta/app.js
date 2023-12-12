@@ -1,0 +1,3 @@
+const uno = {
+    nombre: "uno"
+}
