@@ -1,0 +1,14 @@
+:root{
+    --escala: 300px
+}
+
+h1{
+    text-align: center;
+}
+
+#ruleta{
+    width:  var(--escala);
+    height: var(--escala);
+    border: 3px solid red;
+}
+
