@@ -18,16 +18,25 @@ const tres = {
 
 let conceptos = [uno, dos, tres];
 
+const colores = [
+    "#126253","#134526","#C7B446","#5D9B9B","#8673A1","#100000","#4C9141","#8E402A","#231A24","#424632","#1F3438","#025669","#008F39","#763C28"
+]
+
 function ajustarRuleta(){
     const opcionesContainer = document.createElement("div");
     opcionesContainer.id = "opcionesContainer"
     ruleta.appendChild(opcionesContainer);
-    conceptos.forEach(concepto => {
+    conceptos.forEach((concepto, i) =>{
         //Crear los triangulos de coores
-        const opcionesContainer = document.createElement("div");
+        const opcionElement = document.createElement("div");
         opcionElement.classList.add("opcion");
-        opcionesContainer.ariaHasPopup(opcionElement)
+        opcionesContainer.appendChild(opcionElement);
+        opcionElement.style = `background-color: ${colores[i]}`
     })
 }   
+
+function getPosicionParaProbabilidad(probabilidad){
+    
+}
 
 ajustarRuleta();

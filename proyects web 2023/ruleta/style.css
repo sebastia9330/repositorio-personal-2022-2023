@@ -2,13 +2,32 @@
     --escala: 300px
 }
 
+body{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h1{
     text-align: center;
+    margin: 0;
 }
 
 #ruleta{
+    position: relative;
     width:  var(--escala);
     height: var(--escala);
     border: 3px solid red;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.opcion{
+    position: absolute;
+    width:  var(--escala);
+    height: var(--escala);
 }
 
