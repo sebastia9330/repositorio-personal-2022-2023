@@ -1,5 +1,5 @@
 :root{
-    --escala: 300px
+    --escala: 350px
 }
 
 body{
@@ -11,9 +11,28 @@ body{
     align-items: center;
 }
 
+img{
+    position: absolute;
+    width: var(--escala);
+    height: var(--escala);
+    opacity: 50%;
+    z-index: 2;
+    transform: rotate(90deg);
+}
+
 h1{
     text-align: center;
     margin: 0;
+}
+
+.separador{
+    position: absolute;
+    top: 0;
+    left: calc(var(--escala) / 2 - 3px);
+    height: calc(var(--escala) / 2);
+    width: 6px;
+    background-color: black;
+    transform-origin: bottom;
 }
 
 #ruleta{
@@ -29,5 +48,18 @@ h1{
     position: absolute;
     width:  var(--escala);
     height: var(--escala);
+}
+
+button{
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 50%;
+    border: 3px dashed;
+    cursor: pointer;
 }
 
