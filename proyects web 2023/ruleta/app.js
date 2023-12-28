@@ -1,3 +1,0 @@
-const uno = {
-    nombre: "uno"
-}
