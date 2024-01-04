@@ -1,4 +1,9 @@
 const ruleta = document.getElementById("ruleta");
+let ganador = ""
+const root = document.documentElement;
+sorteando = false;
+
+document.getElementById("girar").addEventListener("click",()=> sortear())
 
 
 const uno = {
@@ -93,5 +98,28 @@ function getPosicionParaProbabilidad(probabilidad){
 		return `clip-path: polygon(50% 0, ${x2}% 0, 50% 50%)`
 	}
 }
+
+function sortear(){
+	if(sorteando) return;
+	sorteando = true;
+	nSorteo = Math.random();
+	let pAcumulada = 0
+	ruleta.classList.toggle("giro",true)
+	conceptos.forEach(concepto =>{
+		if(nSorteo*100 >= pAcumulada && nSorteo*100 < pAcumulada+concepto.probabilidad){
+			ganador = concepto.nombre;
+			console.log("Ganador", nSorteo*100, concepto.nombre)
+		}
+		pAcumulada += concepto.probabilidad;
+	})
+	const giroRuleta = 5*360 + ((1-nSorteo)*360);
+	root.style.setProperty("--giroRuleta",giroRuleta+"deg")
+}
+
+ruleta.addEventListener("animationend",()=>{
+	ruleta.style.transform = "rotate(" + getCurrentRotation(ruleta) + "deg)";
+	sorteando = false;
+	ruleta.classList.toggle("giro",false);
+})
 
 ajustarRuleta();

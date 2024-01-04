@@ -1,5 +1,6 @@
 :root{
-    --escala: 350px
+    --escala: 350px;
+    --giroRuleta: 0deg;
 }
 
 body{
@@ -18,6 +19,7 @@ img{
     opacity: 50%;
     z-index: 2;
     transform: rotate(90deg);
+    pointer-events: none;
 }
 
 h1{
@@ -61,5 +63,22 @@ button{
     border-radius: 50%;
     border: 3px dashed;
     cursor: pointer;
+}
+
+.giro{
+    animation-name: girar;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.1, 0, 0.18, 0.99);
+}
+
+@keyframes girar {
+    100%{
+        transform: rotate(var(--giroRuleta));
+        -webkit-transform: rotate(var(--giroRuleta));
+        -moz-transform: rotate(var(--giroRuleta));
+        -ms-transform: rotate(var(--giroRuleta));
+        -o-transform: rotate(var(--giroRuleta));
+}
 }
 
