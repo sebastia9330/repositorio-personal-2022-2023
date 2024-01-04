@@ -1,0 +1,33 @@
+
+
+body{
+    margin: 0;
+}
+
+.escondido{
+    display: none;
+}
+
+#barraProgreso{
+    height: 10px;
+    width: 100%;
+    background-color: brown;
+}
+
+#barraProgreso div{
+    height: 10px;
+    background-color: green;
+}
+
+.completarTiempo{
+    animation: completarBarra var(--tiempo) forwards linear;
+}
+
+@keyframes completarBarra{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
