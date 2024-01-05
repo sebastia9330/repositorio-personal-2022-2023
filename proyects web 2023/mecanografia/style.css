@@ -1,7 +1,12 @@
-
+:root{
+    --border-radius: 20px;
+    --background-objetos: rgba(0, 0, 0, 0.38)
+}
 
 body{
     margin: 0;
+    background: linear-gradient(0deg, rgb(34, 37, 195) 0%, rgb(42, 202, 250) 100%);
+    min-height: 100vh;
 }
 
 .escondido{
@@ -21,6 +26,20 @@ body{
 
 .completarTiempo{
     animation: completarBarra var(--tiempo) forwards linear;
+}
+
+#final p{
+    background-color: var(--background-objetos);
+    color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid white;
+}
+
+button{
+    padding: 50px;
+    border: unset;
+    border-radius: ;
 }
 
 @keyframes completarBarra{
