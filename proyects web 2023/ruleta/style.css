@@ -3,6 +3,11 @@
     --giroRuleta: 0deg;
 }
 
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
 body{
     min-height: 100vh;
     margin: 0;
@@ -10,6 +15,34 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#cartelGanador{
+    position: absolute;
+    left: -150px;
+    top: -40px;
+    background-color: rgba(4, 107, 92, 0.507);
+    width: 300px;
+    font-weight: bold;
+}
+
+#marcador{
+    position: absolute;
+    z-index: 10;
+    top: -20px;
+    background-color: black;
+    height: 65px;
+    width: 5px;
+    pointer-events: none;
 }
 
 img{
@@ -23,7 +56,6 @@ img{
 }
 
 h1{
-    text-align: center;
     margin: 0;
 }
 
@@ -63,6 +95,7 @@ button{
     border-radius: 50%;
     border: 3px dashed;
     cursor: pointer;
+    user-select: none;
 }
 
 .giro{

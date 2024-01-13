@@ -1,7 +1,10 @@
 const ruleta = document.getElementById("ruleta");
 let ganador = ""
 const root = document.documentElement;
-sorteando = false;
+let sorteando = false;
+const ganadorTexto = document.getElementById("ganadorTexto");
+let animacionCarga;
+
 
 document.getElementById("girar").addEventListener("click",()=> sortear())
 
@@ -102,13 +105,27 @@ function getPosicionParaProbabilidad(probabilidad){
 function sortear(){
 	if(sorteando) return;
 	sorteando = true;
+	ganadorTexto.textContent = ".";
+	animacionCarga = setInterval( ()=>{
+		switch(ganadorTexto.textContent){
+			case ".":
+				ganadorTexto.textContent = "..";
+				break;
+			case "..":
+				ganadorTexto.textContent = "...";
+				break;
+			default:
+				ganadorTexto.textContent = ".";
+				break;
+		}
+	},500)
 	nSorteo = Math.random();
 	let pAcumulada = 0
 	ruleta.classList.toggle("giro",true)
 	conceptos.forEach(concepto =>{
 		if(nSorteo*100 >= pAcumulada && nSorteo*100 < pAcumulada+concepto.probabilidad){
 			ganador = concepto.nombre;
-			console.log("Ganador", nSorteo*100, concepto.nombre)
+			//console.log("Ganador", nSorteo*100, concepto.nombre)
 		}
 		pAcumulada += concepto.probabilidad;
 	})
@@ -120,6 +137,8 @@ ruleta.addEventListener("animationend",()=>{
 	ruleta.style.transform = "rotate(" + getCurrentRotation(ruleta) + "deg)";
 	sorteando = false;
 	ruleta.classList.toggle("giro",false);
+	ganadorTexto.textContent = ganador;
+	clearInterval(animacionCarga);
 })
 
 ajustarRuleta();
