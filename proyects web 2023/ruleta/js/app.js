@@ -44,7 +44,7 @@ const cinco = {
 let conceptos = [uno, dos, tres, cuatro, cinco];
 
 const colores = [
-    "#126253","#134526","#C7B446","#5D9B9B","#8673A1","#100000","#4C9141","#8E402A","#231A24","#424632","#1F3438","#025669","#008F39","#763C28"
+    "#FFC3C3","#126253","#134526","#C7B446","#5D9B9B","#8673A1","#100000","#4C9141","#8E402A","#231A24","#424632","#1F3438","#025669","#008F39","#763C28","#99CC00","#7D6608","#154360","#512E5F","#641E16"
 ]
 
 function ajustarRuleta(){
@@ -79,17 +79,30 @@ function ajustarRuleta(){
 	})
 }
 
-function agregarConfiguracionProbabilidad(concepto){
+function agregarConfiguracionProbabilidad(concepto = undefined){
 	const opcionContainer = document.createElement("div");
 	const opcionInput = document.createElement("input");
 	opcionInput.type = "number";
-	opcionInput.value = concepto.probabilidad;
 	opcionInput.addEventListener("change",()=> verificarValidezFormulario())
-	const opcionLabel = document.createElement("label");
-	opcionLabel.textContent = concepto.nombre;
-	opcionContainer.appendChild(opcionLabel);
+	const borrar = document.createElement("button");
+	borrar.textContent = "X";
+	if(concepto){
+		const opcionLabel = document.createElement("label");
+		opcionLabel.textContent = concepto.nombre;
+		opcionContainer.appendChild(opcionLabel);
+		opcionInput.value = concepto.probabilidad;
+	}else{
+		const nombreInput = document.createElement("input");
+		opcionContainer.appendChild(nombreInput);
+		opcionInput.value = 0;
+	}
 	opcionContainer.appendChild(opcionInput);
+	opcionContainer.appendChild(borrar);
 	formContainer.appendChild(opcionContainer);
+	borrar.addEventListener("click", (event)=>{
+		formContainer.removeChild(event.target.parentNode);
+		verificarValidezFormulario();
+	})
 }
 
 function getPosicionParaProbabilidad(probabilidad){
@@ -175,13 +188,17 @@ document.getElementById("aceptar").addEventListener("click", ()=>{
 	conceptos = [];
 	Array.from(formContainer.children).forEach(opcion =>{
 		const nuevaProbabilidad = {
-			nombre: opcion.children[0].textContent,
+			nombre: opcion.children[0].tagName === "LABEL" ? opcion.children[0].textContent : opcion.children[0].value,
 			probabilidad: parseFloat(opcion.children[1].value) 
 		}
 		conceptos.push(nuevaProbabilidad);
 	})
 	modal.close();
 	ajustarRuleta();
+})
+
+document.getElementById("agregar").addEventListener("click", ()=>{
+	agregarConfiguracionProbabilidad();
 })
 
 function verificarValidezFormulario(){
