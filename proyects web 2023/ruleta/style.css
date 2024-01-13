@@ -82,9 +82,10 @@ h1{
     position: absolute;
     width:  var(--escala);
     height: var(--escala);
+    cursor: pointer;
 }
 
-button{
+#girar{
     position: absolute;
     top: calc(50% - 50px);
     left: calc(50% - 50px);
@@ -96,6 +97,27 @@ button{
     border: 3px dashed;
     cursor: pointer;
     user-select: none;
+}
+
+dialog button{
+    user-select: none;
+    margin-top: 15px;
+}
+
+#tituloForm{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    text-decoration: underline;
+    gap: 40px;
+}
+
+#formContainer div{
+    display: flex;
+}
+
+#formContainer div label{
+    margin-right: auto;
 }
 
 .giro{

@@ -4,6 +4,12 @@ const root = document.documentElement;
 let sorteando = false;
 const ganadorTexto = document.getElementById("ganadorTexto");
 let animacionCarga;
+const modal = document.querySelector("dialog");
+const formContainer = document.getElementById("formContainer");
+const porcentaje = document.getElementById("porcentaje");
+const botonAceptar = document.getElementById("aceptar");
+
+let opcionContainer;
 
 
 document.getElementById("girar").addEventListener("click",()=> sortear())
@@ -42,7 +48,8 @@ const colores = [
 ]
 
 function ajustarRuleta(){
-    const opcionesContainer = document.createElement("div");
+	if(opcionContainer) ruleta.removeChild(opcionesContainer);
+    opcionesContainer = document.createElement("div");
     opcionesContainer.id = "opcionesContainer"
     ruleta.appendChild(opcionesContainer);
 	let pAcumulada = 0;
@@ -59,9 +66,31 @@ function ajustarRuleta(){
 		const separador = document.createElement("div");
     	separador.classList.add("separador")
 		separador.style = `transform: rotate(${probabilidadAGrados(pAcumulada)}deg)`
-    	ruleta.appendChild(separador);
+    	opcionesContainer.appendChild(separador);
+		opcionElement.addEventListener("click", ()=>{
+			modal.showModal();
+			Array.from(formContainer.children).forEach(element =>{
+				formContainer.removeChild(element)
+			})
+			conceptos.forEach(concepto =>{
+				agregarConfiguracionProbabilidad(concepto)
+			})
+		})
 	})
-}   
+}
+
+function agregarConfiguracionProbabilidad(concepto){
+	const opcionContainer = document.createElement("div");
+	const opcionInput = document.createElement("input");
+	opcionInput.type = "number";
+	opcionInput.value = concepto.probabilidad;
+	opcionInput.addEventListener("change",()=> verificarValidezFormulario())
+	const opcionLabel = document.createElement("label");
+	opcionLabel.textContent = concepto.nombre;
+	opcionContainer.appendChild(opcionLabel);
+	opcionContainer.appendChild(opcionInput);
+	formContainer.appendChild(opcionContainer);
+}
 
 function getPosicionParaProbabilidad(probabilidad){
 	const radianes = probabilidadARadianes(probabilidad)
@@ -140,5 +169,32 @@ ruleta.addEventListener("animationend",()=>{
 	ganadorTexto.textContent = ganador;
 	clearInterval(animacionCarga);
 })
+
+document.getElementById("cancelar").addEventListener("click", ()=> modal.close())
+document.getElementById("aceptar").addEventListener("click", ()=>{
+	conceptos = [];
+	Array.from(formContainer.children).forEach(opcion =>{
+		const nuevaProbabilidad = {
+			nombre: opcion.children[0].textContent,
+			probabilidad: parseFloat(opcion.children[1].value) 
+		}
+		conceptos.push(nuevaProbabilidad);
+	})
+	modal.close();
+	ajustarRuleta();
+})
+
+function verificarValidezFormulario(){
+	let suma = 0;
+	Array.from(formContainer.children).forEach(opcion =>{
+		suma += parseFloat(opcion.children[1].value)
+	});
+	porcentaje.textContent = suma;
+	if(suma === 100){
+		botonAceptar.disabled = false;
+	}else{
+		botonAceptar.disabled = true;
+	}
+}
 
 ajustarRuleta();
