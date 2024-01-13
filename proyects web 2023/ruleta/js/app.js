@@ -17,31 +17,106 @@ document.getElementById("girar").addEventListener("click",()=> sortear())
 
 const uno = {
     nombre: "Uno",
-    probabilidad: 20
+    probabilidad: 5
 }
 
 const dos = {
     nombre: "Dos",
-    probabilidad: 20
+    probabilidad: 5
 }
 
 const tres = {
     nombre: "Tres",
-    probabilidad: 20
+    probabilidad: 5
 }
 
 const cuatro = {
     nombre: "Cuatro",
-    probabilidad: 20
+    probabilidad: 5
 }
 
 const cinco = {
     nombre: "Cinco",
-    probabilidad: 20
+    probabilidad: 5
+}
+
+const seis = {
+    nombre: "Seis",
+    probabilidad: 5
+}
+
+const siete = {
+    nombre: "Siete",
+    probabilidad: 5
+}
+
+const ocho = {
+    nombre: "Ocho",
+    probabilidad: 5
+}
+
+const nueve = {
+    nombre: "Nueve",
+    probabilidad: 5
+}
+
+const diez = {
+    nombre: "Diez",
+    probabilidad: 5
+}
+
+const once = {
+    nombre: "Once",
+    probabilidad: 5
+}
+
+const doce = {
+    nombre: "Doce",
+    probabilidad: 5
+}
+
+const trece = {
+    nombre: "Trece",
+    probabilidad: 5
+}
+
+const catorce = {
+    nombre: "Catorce",
+    probabilidad: 5
+}
+
+const quince = {
+    nombre: "Quince",
+    probabilidad: 5
+}
+
+const dieciseis = {
+    nombre: "Dieciseis",
+    probabilidad: 5
+}
+
+const diecisiete = {
+    nombre: "Diecisiete",
+    probabilidad: 5
+}
+
+const dieciocho = {
+    nombre: "Dieciocho",
+    probabilidad: 5
+}
+
+const diecinueve = {
+    nombre: "Diecinueve",
+    probabilidad: 5
+}
+
+const veinte = {
+    nombre: "Veinte",
+    probabilidad: 5
 }
 
 
-let conceptos = [uno, dos, tres, cuatro, cinco];
+let conceptos = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve, veinte];
 
 const colores = [
     "#FFC3C3","#126253","#134526","#C7B446","#5D9B9B","#8673A1","#100000","#4C9141","#8E402A","#231A24","#424632","#1F3438","#025669","#008F39","#763C28","#99CC00","#7D6608","#154360","#512E5F","#641E16"
