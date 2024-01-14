@@ -1,3 +1,4 @@
+//Elementos html
 const botonEmpezar = document.getElementById("empezar");
 const barraProgreso = document.querySelector("#barraProgreso div");
 const correctasElement = document.querySelector("#correctas span");
@@ -10,9 +11,17 @@ const input = document.querySelector("input")
 
 //variables
 const tiempoJuego = 5;
+let letrasCorrectas;
+let letrasIncorrectas;
+let palabrasTerminadas;
+let listaLetras = [];
+let indiceActual;
 
 //funciones
 function empezar(){
+    letrasCorrectas = 0;
+    letrasIncorrectas = 0;
+    palabrasTerminadas = 0;
     console.log("iniciado el test")
     final.classList.toggle("escondido", true)
     barraProgreso.classList.toggle("completarTiempo", true)
@@ -20,12 +29,16 @@ function empezar(){
 }
 
 function nuevaPalabra(){
+    if(listaLetras.length > 0) listaLetras.forEach(letra => palabraContainer.removeChild(letra));
     const nPalabraElegida = Math.floor(Math.random()*(palabrasArray.length-1));
-    const palabraElegida = palabrasArray[nPalabraElegida]
+    const palabraElegida = palabrasArray[nPalabraElegida];
+    listaLetras = []
+    indiceActual = 0;
     for(let i = 0; i < palabraElegida.length; i++){
         const letraElement = document.createElement("span");
         letraElement.textContent = palabraElegida[i];
-        palabraContainer.appendChild(letraElement)
+        palabraContainer.appendChild(letraElement);
+        listaLetras.push(letraElement);
     }
 }
 
@@ -45,5 +58,17 @@ input.focus();
 document.documentElement.style.setProperty("--tiempo", tiempoJuego + "s")
 nuevaPalabra()
 
-input.addEventListener("input",(event) => console.log(event));
+input.addEventListener("input",(event) => {
+    if(event.data === listaLetras[indiceActual].textContent){
+        indiceActual++;
+        //Marcar letra finalizada
+        letrasCorrectas++;
+        if(indiceActual === listaLetras.length){
+            nuevaPalabra();
+        }
+    }else{
+        //Marcar que hubo un error
+        letrasIncorrectas++;
+    }
+});
 input.addEventListener("blur",() => input.focus());
