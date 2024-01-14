@@ -24,8 +24,20 @@ p,b,span,footer{
 }
 
 .invisible{
+    opacity: 0%;
+}
+
+input{
     position: absolute;
     top: -1000000px;
+}
+
+#palabraActual{
+    font-size: var(--font-size);
+}
+
+.letraActual{
+    color: red;
 }
 
 #barraProgreso{
@@ -41,10 +53,6 @@ p,b,span,footer{
     background-color: green;
 }
 
-.completarTiempo{
-    animation: completarBarra var(--tiempo) forwards linear;
-    -webkit-animation: completarBarra var(--tiempo) forwards linear;
-}
 
 #final p{
     background-color: var(--background-objetos);
@@ -71,6 +79,18 @@ button{
     font-size: var(--font-size);
 }
 
+.completarTiempo{
+    animation: completarBarra var(--tiempo) forwards linear;
+    -webkit-animation: completarBarra var(--tiempo) forwards linear;
+}
+
+.desaparecer{
+    font-size: var(--font-size);
+    position: absolute;
+    animation: desaparecer 500ms forwards ease-in-out;
+    -webkit-animation: desaparecer 500ms forwards ease-in-out;
+}
+
 @keyframes completarBarra{
     0%{
         width: 0%;
@@ -78,4 +98,22 @@ button{
     100%{
         width: 100%;
     }
+}
+
+@keyframes desaparecer{
+    0%{
+
+    }
+    50%{
+        color: rgb(69, 91, 136);
+    }
+    100%{
+        transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+        opacity: 0%;
+        font-size: calc(var(--font-size) / 2);
+}
 }

@@ -26,6 +26,7 @@ function empezar(){
     final.classList.toggle("escondido", true)
     barraProgreso.classList.toggle("completarTiempo", true)
     botonEmpezar.classList.toggle("escondido",true)
+    listaLetras[0].classList.toggle("letraActual")
 }
 
 function nuevaPalabra(){
@@ -40,6 +41,21 @@ function nuevaPalabra(){
         palabraContainer.appendChild(letraElement);
         listaLetras.push(letraElement);
     }
+}
+
+function crearLetraEfecto(element){
+    element.classList.toggle("invisible",true)
+    const letra = element.textContent;
+    const posicionLetra = element.getBoundingClientRect();
+    console.log(letra,posicionLetra)
+    const nuevaLetra = document.createElement("span");
+    nuevaLetra.style = `
+        left: ${posicionLetra.left}px;
+        top: ${posicionLetra.top}px;
+    `
+    nuevaLetra.classList.add("desaparecer");
+    nuevaLetra.textContent = letra;
+    document.body.appendChild(nuevaLetra);
 }
 
 
@@ -60,12 +76,14 @@ nuevaPalabra()
 
 input.addEventListener("input",(event) => {
     if(event.data === listaLetras[indiceActual].textContent){
+        crearLetraEfecto(listaLetras[indiceActual])
         indiceActual++;
         //Marcar letra finalizada
         letrasCorrectas++;
         if(indiceActual === listaLetras.length){
             nuevaPalabra();
         }
+        listaLetras[indiceActual].classList.toggle("letraActual")
     }else{
         //Marcar que hubo un error
         letrasIncorrectas++;
