@@ -6,6 +6,7 @@ const ppmElement = document.querySelector("#ppm span");
 const final = document.querySelector("#final");
 const botonReiniciar = document.querySelector("#final button");
 const palabraContainer = document.getElementById("palabraActual");
+const input = document.querySelector("input")
 
 //variables
 const tiempoJuego = 5;
@@ -40,5 +41,9 @@ barraProgreso.addEventListener("animationend", ()=>{
 
 
 //ejecucion
+input.focus();
 document.documentElement.style.setProperty("--tiempo", tiempoJuego + "s")
 nuevaPalabra()
+
+input.addEventListener("input",(event) => console.log(event));
+input.addEventListener("blur",() => input.focus());

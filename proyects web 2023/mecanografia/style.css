@@ -23,6 +23,11 @@ p,b,span,footer{
     display: none;
 }
 
+.invisible{
+    position: absolute;
+    top: -1000000px;
+}
+
 #barraProgreso{
     position: absolute;
     top: 0px;
