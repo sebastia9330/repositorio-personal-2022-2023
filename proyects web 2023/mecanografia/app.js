@@ -17,6 +17,12 @@ function empezar(){
     botonEmpezar.classList.toggle("escondido",true)
 }
 
+function nuevaPalabra(){
+    const nPalabraElegida = Math.floor(Math.random()*(palabrasArray.length-1));
+    const palabraElegida = palabrasArray[nPalabraElegida]
+    console.log(palabraElegida)
+}
+
 
 botonEmpezar.addEventListener("click",() => empezar())
 botonReiniciar.addEventListener("click", ()=> empezar())
@@ -30,3 +36,4 @@ barraProgreso.addEventListener("animationend", ()=>{
 
 //ejecucion
 document.documentElement.style.setProperty("--tiempo", tiempoJuego + "s")
+nuevaPalabra()
