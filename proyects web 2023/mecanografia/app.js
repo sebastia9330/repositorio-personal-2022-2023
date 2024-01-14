@@ -4,7 +4,8 @@ const correctasElement = document.querySelector("#correctas span");
 const erroresElement = document.querySelector("#errores span");
 const ppmElement = document.querySelector("#ppm span");
 const final = document.querySelector("#final");
-const botonReiniciar = document.querySelector("#final button")
+const botonReiniciar = document.querySelector("#final button");
+const palabraContainer = document.getElementById("palabraActual");
 
 //variables
 const tiempoJuego = 5;
@@ -20,7 +21,11 @@ function empezar(){
 function nuevaPalabra(){
     const nPalabraElegida = Math.floor(Math.random()*(palabrasArray.length-1));
     const palabraElegida = palabrasArray[nPalabraElegida]
-    console.log(palabraElegida)
+    for(let i = 0; i < palabraElegida.length; i++){
+        const letraElement = document.createElement("span");
+        letraElement.textContent = palabraElegida[i];
+        palabraContainer.appendChild(letraElement)
+    }
 }
 
 
