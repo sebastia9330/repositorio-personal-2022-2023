@@ -1,12 +1,22 @@
 :root{
     --border-radius: 20px;
-    --background-objetos: rgba(0, 0, 0, 0.38)
+    --background-objetos: rgba(0, 0, 0, 0.38);
+    --color: white;
+    --font-size: 100px;
 }
 
 body{
     margin: 0;
     background: linear-gradient(0deg, rgb(34, 37, 195) 0%, rgb(42, 202, 250) 100%);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p,b,span,footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .escondido{
@@ -14,6 +24,8 @@ body{
 }
 
 #barraProgreso{
+    position: absolute;
+    top: 0px;
     height: 10px;
     width: 100%;
     background-color: brown;
@@ -26,20 +38,32 @@ body{
 
 .completarTiempo{
     animation: completarBarra var(--tiempo) forwards linear;
+    -webkit-animation: completarBarra var(--tiempo) forwards linear;
 }
 
 #final p{
     background-color: var(--background-objetos);
-    color: white;
+    color: var(--color);
     padding: 20px;
     border-radius: var(--border-radius);
     border: 1px solid white;
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
 }
 
 button{
     padding: 50px;
     border: unset;
-    border-radius: ;
+    border-radius: var(--border-radius);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
+    background-color: var(--background-objetos);
+    color: var(--color);
+    font-size: var(--font-size);
 }
 
 @keyframes completarBarra{
