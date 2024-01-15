@@ -32,6 +32,14 @@ input{
     top: -1000000px;
 }
 
+#correctas span{
+    color: rgb(0, 0, 0);
+}
+
+#errores span{
+    color: red;
+}
+
 #palabraActual{
     font-size: var(--font-size);
 }

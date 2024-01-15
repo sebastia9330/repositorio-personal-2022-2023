@@ -8,9 +8,10 @@ const final = document.querySelector("#final");
 const botonReiniciar = document.querySelector("#final button");
 const palabraContainer = document.getElementById("palabraActual");
 const input = document.querySelector("input")
+let jugando = false;
 
 //variables
-const tiempoJuego = 5;
+const tiempoJuego = 60;
 let letrasCorrectas;
 let letrasIncorrectas;
 let palabrasTerminadas;
@@ -19,10 +20,13 @@ let indiceActual;
 
 //funciones
 function empezar(){
+    jugando = true;
+    palabraContainer.classList.toggle("escondido",false)
+    nuevaPalabra()
     letrasCorrectas = 0;
     letrasIncorrectas = 0;
     palabrasTerminadas = 0;
-    console.log("iniciado el test")
+    //console.log("iniciado el test")
     final.classList.toggle("escondido", true)
     barraProgreso.classList.toggle("completarTiempo", true)
     botonEmpezar.classList.toggle("escondido",true)
@@ -47,7 +51,7 @@ function crearLetraEfecto(element){
     element.classList.toggle("invisible",true)
     const letra = element.textContent;
     const posicionLetra = element.getBoundingClientRect();
-    console.log(letra,posicionLetra)
+    //console.log(letra,posicionLetra)
     const nuevaLetra = document.createElement("span");
     nuevaLetra.style = `
         left: ${posicionLetra.left}px;
@@ -58,23 +62,32 @@ function crearLetraEfecto(element){
     document.body.appendChild(nuevaLetra);
 }
 
-
+//Eventos
 botonEmpezar.addEventListener("click",() => empezar())
 botonReiniciar.addEventListener("click", ()=> empezar())
 
 barraProgreso.addEventListener("animationend", ()=>{
+    jugando = false;
     final.classList.toggle("escondido",false)
-    console.log("Termino el tiempo")
-    barraProgreso.classList.toggle("completarTiempo",false)
+    //console.log("Termino el tiempo")
+    barraProgreso.classList.toggle("completarTiempo",false);
+    correctasElement.textContent = letrasCorrectas;
+    erroresElement.textContent = letrasIncorrectas;
+    ppmElement.textContent = palabrasTerminadas*(60/tiempoJuego);
+    palabraContainer.classList.toggle("escondido",true)
 })
 
 
 //ejecucion
 input.focus();
 document.documentElement.style.setProperty("--tiempo", tiempoJuego + "s")
-nuevaPalabra()
+/* nuevaPalabra() */
 
 input.addEventListener("input",(event) => {
+    if(!jugando){
+        if(event.data === " ") empezar();
+        return
+    }
     if(event.data === listaLetras[indiceActual].textContent){
         crearLetraEfecto(listaLetras[indiceActual])
         indiceActual++;
@@ -82,6 +95,7 @@ input.addEventListener("input",(event) => {
         letrasCorrectas++;
         if(indiceActual === listaLetras.length){
             nuevaPalabra();
+            palabrasTerminadas++;
         }
         listaLetras[indiceActual].classList.toggle("letraActual")
     }else{
